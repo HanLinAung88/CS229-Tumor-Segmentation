@@ -19,6 +19,7 @@ def read_X_Y(fname, headers, sep=' '):
     header_to_data = defaultdict(list)
     Y = []
     X = []
+    Y_names = []
     with open(fname) as f:
         for line in f:
             line = line.strip()
@@ -28,8 +29,9 @@ def read_X_Y(fname, headers, sep=' '):
                 Yi = np.array( [float(cols[4]),
                              float(cols[5]),
                             float(cols[6])] ).reshape((3,1))
+                Y_names.append(cols[0])
                 Y.append(Yi)
-    return  X,np.array(Y)
+    return  X,np.array(Y), Y_names
 
 
 
