@@ -1,0 +1,2090 @@
+ast login: Sat Nov 24 15:56:37 on ttys001
+prellis_host:~ Sajana$ cd Documents/gcloud/google-cloud-sdk
+prellis_host:google-cloud-sdk Sajana$ ls
+LICENSE			completion.zsh.inc	path.bash.inc
+README			data			path.fish.inc
+RELEASE_NOTES		deb			path.zsh.inc
+VERSION			install.bat		platform
+bin			install.sh		properties
+completion.bash.inc	lib			rpm
+prellis_host:google-cloud-sdk Sajana$ cd ..
+prellis_host:gcloud Sajana$ ./google-cloud-sdk/bin/gcloud init
+Welcome! This command will take you through the configuration of gcloud.
+
+Your current configuration has been set to: [default]
+
+You can skip diagnostics next time by using the following flag:
+  gcloud init --skip-diagnostics
+
+Network diagnostic detects and fixes local network connection issues.
+Checking network connection...done.                                            
+Reachability Check passed.
+Network diagnostic passed (1/1 checks passed).
+
+You must log in to continue. Would you like to log in (Y/n)?  y
+
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&prompt=select_account&response_type=code&client_id=32555940559.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&access_type=offline
+
+
+
+
+Updates are available for some Cloud SDK components.  To install them,
+please run:
+  $ gcloud components update
+
+You are logged in as: [sajana123b@gmail.com].
+
+Pick cloud project to use: 
+ [1] cs193xhw5
+ [2] dinning-95e68
+ [3] flashhang-3b322
+ [4] flashhang-rn
+ [5] impact-experience-cssg
+ [6] mysterybox-91a98
+ [7] starry-runner-223623
+ [8] talendar-aecb4
+ [9] talendar-trains
+ [10] Create a new project
+Please enter numeric choice or text value (must exactly match list 
+item):  7       
+
+Your current project has been set to: [starry-runner-223623].
+
+Do you want to configure a default Compute Region and Zone? (Y/n)?  y
+
+Which Google Compute Engine zone would you like to use as project 
+default?
+If you do not specify a zone via a command line flag while working 
+with Compute Engine resources, the default is assumed.
+ [1] us-east1-b
+ [2] us-east1-c
+ [3] us-east1-d
+ [4] us-east4-c
+ [5] us-east4-b
+ [6] us-east4-a
+ [7] us-central1-c
+ [8] us-central1-a
+ [9] us-central1-f
+ [10] us-central1-b
+ [11] us-west1-b
+ [12] us-west1-c
+ [13] us-west1-a
+ [14] europe-west4-a
+ [15] europe-west4-b
+ [16] europe-west4-c
+ [17] europe-west1-b
+ [18] europe-west1-d
+ [19] europe-west1-c
+ [20] europe-west3-b
+ [21] europe-west3-c
+ [22] europe-west3-a
+ [23] europe-west2-c
+ [24] europe-west2-b
+ [25] europe-west2-a
+ [26] asia-east1-b
+ [27] asia-east1-a
+ [28] asia-east1-c
+ [29] asia-southeast1-b
+ [30] asia-southeast1-a
+ [31] asia-southeast1-c
+ [32] asia-northeast1-b
+ [33] asia-northeast1-c
+ [34] asia-northeast1-a
+ [35] asia-south1-c
+ [36] asia-south1-b
+ [37] asia-south1-a
+ [38] australia-southeast1-b
+ [39] australia-southeast1-c
+ [40] australia-southeast1-a
+ [41] southamerica-east1-b
+ [42] southamerica-east1-c
+ [43] southamerica-east1-a
+ [44] asia-east2-a
+ [45] asia-east2-b
+ [46] asia-east2-c
+ [47] europe-north1-a
+ [48] europe-north1-b
+ [49] europe-north1-c
+ [50] northamerica-northeast1-a
+Did not print [6] options.
+Too many options [56]. Enter "list" at prompt to print choices fully.
+Please enter numeric choice or text value (must exactly match list 
+item):  11
+
+Your project default Compute Engine zone has been set to [us-west1-b].
+You can change it by running [gcloud config set compute/zone NAME].
+
+Your project default Compute Engine region has been set to [us-west1].
+You can change it by running [gcloud config set compute/region NAME].
+
+Created a default .boto configuration file at [/Users/Sajana/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+Your Google Cloud SDK is configured and ready to use!
+
+* Commands that require authentication will use sajana123b@gmail.com by default
+* Commands will reference project `starry-runner-223623` by default
+* Compute Engine commands will use region `us-west1` by default
+* Compute Engine commands will use zone `us-west1-b` by default
+
+Run `gcloud help config` to learn how to change individual settings
+
+This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+Run `gcloud topic configurations` to learn more.
+
+Some things to try next:
+
+* Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+* Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
+prellis_host:gcloud Sajana$ gcloud compute ssh --zone=us-west1-b tumor-seg-cpu
+WARNING: The public SSH key file for gcloud does not exist.
+WARNING: The private SSH key file for gcloud does not exist.
+WARNING: You do not have an SSH key for gcloud.
+WARNING: SSH keygen will be executed to generate a key.
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/Sajana/.ssh/google_compute_engine.
+Your public key has been saved in /Users/Sajana/.ssh/google_compute_engine.pub.
+The key fingerprint is:
+SHA256:d5ioVxFdrppXOR4gU6MG+7TPEDuQmH5IJhSAzzb1WMc Sajana@prellis_host.local
+The key's randomart image is:
++---[RSA 2048]----+
+| ...o. .. ..o..  |
+|.  .. .oE+ +.o   |
+| o ..+=.+ O . .  |
+|  = .=.. * X o . |
+| . .  o S @ o =  |
+|       o o O o o |
+|      . . o + .  |
+|       .   .     |
+|                 |
++----[SHA256]-----+
+Updating project ssh metadata...⠶Updated [https://www.googleapis.com/compute/v1/projects/starry-runner-223623].
+Updating project ssh metadata...done.                                          
+Waiting for SSH key to propagate.
+Warning: Permanently added 'compute.7679943380558956175' (ECDSA) to the list of known hosts.
+======================================
+Welcome to the Google Deep Learning VM
+======================================
+
+Version: m12
+Based on: Debian GNU/Linux 9.6 (stretch) (GNU/Linux 4.9.0-8-amd64 x86_64\n)
+
+Resources:
+ * Google Deep Learning Platform StackOverflow: https://stackoverflow.com/questions/tagged/google-dl-platform
+ * Google Cloud Documentation: https://cloud.google.com/deep-learning-vm
+ * Google Group: https://groups.google.com/forum/#!forum/google-dl-platform
+
+To reinstall Nvidia driver (if needed) run:
+sudo /opt/deeplearning/install-driver.sh
+TensorFlow comes pre-installed with this image. To install TensorFlow binaries in a virtualenv (or conda env),
+please use the binaries that are pre-built for this image. You can find the binaries at
+/opt/deeplearning/binaries/tensorflow/
+If you need to install a different version of Tensorflow manually, use the common Deep Learning image with the
+right version of CUDA
+
+Linux tumor-seg-cpu 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Sajana@tumor-seg-cpu:~$ ls
+Sajana@tumor-seg-cpu:~$ git clone https://github.com/HanLinAung88/CS229-Tumor-Segmentation.git
+Cloning into 'CS229-Tumor-Segmentation'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 28 (delta 6), reused 22 (delta 3), pack-reused 0
+Unpacking objects: 100% (28/28), done.
+Sajana@tumor-seg-cpu:~$ ls
+CS229-Tumor-Segmentation
+Sajana@tumor-seg-cpu:~$ cd CS229-Tumor-Segmentation/
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+dataset  get_data.py  log_reg.py  milestone_keras.ipynb  README.md  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ which python
+/usr/bin/python
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ python get_data.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+dataset          log_reg.py   README.md
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ 7z e all-mias.tar.gz 
+-bash: 7z: command not found
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ unzip all-mias.tar.gz 
+Archive:  all-mias.tar.gz
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of all-mias.tar.gz or
+        all-mias.tar.gz.zip, and cannot find all-mias.tar.gz.ZIP, period.
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ jar xvf all-mias.tar.gz 
+-bash: jar: command not found
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ sudo apt-get update
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Hit:2 http://security.debian.org stretch/updates InRelease                     
+Hit:3 http://deb.debian.org/debian stretch-updates InRelease                   
+Hit:4 http://deb.debian.org/debian stretch-backports InRelease                 
+Hit:5 http://deb.debian.org/debian stretch Release                             
+Hit:6 http://packages.cloud.google.com/apt cloud-sdk-stretch InRelease         
+Hit:8 https://nvidia.github.io/libnvidia-container/debian9/amd64  InRelease
+Hit:9 https://nvidia.github.io/nvidia-container-runtime/debian9/amd64  InRelease
+Hit:10 https://nvidia.github.io/nvidia-docker/debian9/amd64  InRelease
+Hit:11 https://download.docker.com/linux/debian stretch InRelease
+Hit:12 http://packages.cloud.google.com/apt google-compute-engine-stretch-stable InRelease
+Hit:7 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:13 http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-stretch InRelease
+Reading package lists... Done                      
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ sudo apt-get install p7zip-fullReading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  p7zip
+Suggested packages:
+  p7zip-rar
+The following NEW packages will be installed:
+  p7zip p7zip-full
+0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
+Need to get 1,479 kB of archives.
+After this operation, 5,469 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian stretch/main amd64 p7zip amd64 16.02+dfsg-3+deb9u1 [364 kB]
+Get:2 http://deb.debian.org/debian stretch/main amd64 p7zip-full amd64 16.02+dfsg-3+deb9u1 [1,115 kB]
+Fetched 1,479 kB in 0s (8,398 kB/s)
+Selecting previously unselected package p7zip.
+(Reading database ... 78481 files and directories currently installed.)
+Preparing to unpack .../p7zip_16.02+dfsg-3+deb9u1_amd64.deb ...
+Unpacking p7zip (16.02+dfsg-3+deb9u1) ...
+Selecting previously unselected package p7zip-full.
+Preparing to unpack .../p7zip-full_16.02+dfsg-3+deb9u1_amd64.deb ...
+Unpacking p7zip-full (16.02+dfsg-3+deb9u1) ...
+Setting up p7zip (16.02+dfsg-3+deb9u1) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up p7zip-full (16.02+dfsg-3+deb9u1) ...
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ 7z e all-mias.tar.gz 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs Intel(R) Xeon(R) CPU @ 2.20GHz (406F0),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 111154265 bytes (107 MiB)
+
+Extracting archive: all-mias.tar.gz
+--
+Path = all-mias.tar.gz
+Type = gzip
+Headers Size = 10
+
+Everything is Ok   
+
+Size:       338001920
+Compressed: 111154265
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias.tar     dataset      log_reg.py             README.md
+all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ cd all-mias.tar
+-bash: cd: all-mias.tar: Not a directory
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ mkdir all-mias
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ 7z x all-mias.tar -o:\all-mias
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs Intel(R) Xeon(R) CPU @ 2.20GHz (406F0),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 338001920 bytes (323 MiB)
+
+Extracting archive: all-mias.tar
+--
+Path = all-mias.tar
+Type = tar
+Physical Size = 338001920
+Headers Size = 173056
+Code Page = UTF-8
+
+Everything is Ok     
+
+Files: 325
+Size:       337668386
+Compressed: 338001920
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+:all-mias  all-mias.tar     dataset      log_reg.py             README.md
+all-mias   all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ :all-mias
+-bash: :all-mias: command not found
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ cd :all-mias
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation/:all-mias$ ls
+Info.txt     mdb054.pgm  mdb109.pgm  mdb164.pgm  mdb219.pgm  mdb274.pgm
+Licence.txt  mdb055.pgm  mdb110.pgm  mdb165.pgm  mdb220.pgm  mdb275.pgm
+mdb001.pgm   mdb056.pgm  mdb111.pgm  mdb166.pgm  mdb221.pgm  mdb276.pgm
+mdb002.pgm   mdb057.pgm  mdb112.pgm  mdb167.pgm  mdb222.pgm  mdb277.pgm
+mdb003.pgm   mdb058.pgm  mdb113.pgm  mdb168.pgm  mdb223.pgm  mdb278.pgm
+mdb004.pgm   mdb059.pgm  mdb114.pgm  mdb169.pgm  mdb224.pgm  mdb279.pgm
+mdb005.pgm   mdb060.pgm  mdb115.pgm  mdb170.pgm  mdb225.pgm  mdb280.pgm
+mdb006.pgm   mdb061.pgm  mdb116.pgm  mdb171.pgm  mdb226.pgm  mdb281.pgm
+mdb007.pgm   mdb062.pgm  mdb117.pgm  mdb172.pgm  mdb227.pgm  mdb282.pgm
+mdb008.pgm   mdb063.pgm  mdb118.pgm  mdb173.pgm  mdb228.pgm  mdb283.pgm
+mdb009.pgm   mdb064.pgm  mdb119.pgm  mdb174.pgm  mdb229.pgm  mdb284.pgm
+mdb010.pgm   mdb065.pgm  mdb120.pgm  mdb175.pgm  mdb230.pgm  mdb285.pgm
+mdb011.pgm   mdb066.pgm  mdb121.pgm  mdb176.pgm  mdb231.pgm  mdb286.pgm
+mdb012.pgm   mdb067.pgm  mdb122.pgm  mdb177.pgm  mdb232.pgm  mdb287.pgm
+mdb013.pgm   mdb068.pgm  mdb123.pgm  mdb178.pgm  mdb233.pgm  mdb288.pgm
+mdb014.pgm   mdb069.pgm  mdb124.pgm  mdb179.pgm  mdb234.pgm  mdb289.pgm
+mdb015.pgm   mdb070.pgm  mdb125.pgm  mdb180.pgm  mdb235.pgm  mdb290.pgm
+mdb016.pgm   mdb071.pgm  mdb126.pgm  mdb181.pgm  mdb236.pgm  mdb291.pgm
+mdb017.pgm   mdb072.pgm  mdb127.pgm  mdb182.pgm  mdb237.pgm  mdb292.pgm
+mdb018.pgm   mdb073.pgm  mdb128.pgm  mdb183.pgm  mdb238.pgm  mdb293.pgm
+mdb019.pgm   mdb074.pgm  mdb129.pgm  mdb184.pgm  mdb239.pgm  mdb294.pgm
+mdb020.pgm   mdb075.pgm  mdb130.pgm  mdb185.pgm  mdb240.pgm  mdb295.pgm
+mdb021.pgm   mdb076.pgm  mdb131.pgm  mdb186.pgm  mdb241.pgm  mdb296.pgm
+mdb022.pgm   mdb077.pgm  mdb132.pgm  mdb187.pgm  mdb242.pgm  mdb297.pgm
+mdb023.pgm   mdb078.pgm  mdb133.pgm  mdb188.pgm  mdb243.pgm  mdb298.pgm
+mdb024.pgm   mdb079.pgm  mdb134.pgm  mdb189.pgm  mdb244.pgm  mdb299.pgm
+mdb025.pgm   mdb080.pgm  mdb135.pgm  mdb190.pgm  mdb245.pgm  mdb300.pgm
+mdb026.pgm   mdb081.pgm  mdb136.pgm  mdb191.pgm  mdb246.pgm  mdb301.pgm
+mdb027.pgm   mdb082.pgm  mdb137.pgm  mdb192.pgm  mdb247.pgm  mdb302.pgm
+mdb028.pgm   mdb083.pgm  mdb138.pgm  mdb193.pgm  mdb248.pgm  mdb303.pgm
+mdb029.pgm   mdb084.pgm  mdb139.pgm  mdb194.pgm  mdb249.pgm  mdb304.pgm
+mdb030.pgm   mdb085.pgm  mdb140.pgm  mdb195.pgm  mdb250.pgm  mdb305.pgm
+mdb031.pgm   mdb086.pgm  mdb141.pgm  mdb196.pgm  mdb251.pgm  mdb306.pgm
+mdb032.pgm   mdb087.pgm  mdb142.pgm  mdb197.pgm  mdb252.pgm  mdb307.pgm
+mdb033.pgm   mdb088.pgm  mdb143.pgm  mdb198.pgm  mdb253.pgm  mdb308.pgm
+mdb034.pgm   mdb089.pgm  mdb144.pgm  mdb199.pgm  mdb254.pgm  mdb309.pgm
+mdb035.pgm   mdb090.pgm  mdb145.pgm  mdb200.pgm  mdb255.pgm  mdb310.pgm
+mdb036.pgm   mdb091.pgm  mdb146.pgm  mdb201.pgm  mdb256.pgm  mdb311.pgm
+mdb037.pgm   mdb092.pgm  mdb147.pgm  mdb202.pgm  mdb257.pgm  mdb312.pgm
+mdb038.pgm   mdb093.pgm  mdb148.pgm  mdb203.pgm  mdb258.pgm  mdb313.pgm
+mdb039.pgm   mdb094.pgm  mdb149.pgm  mdb204.pgm  mdb259.pgm  mdb314.pgm
+mdb040.pgm   mdb095.pgm  mdb150.pgm  mdb205.pgm  mdb260.pgm  mdb315.pgm
+mdb041.pgm   mdb096.pgm  mdb151.pgm  mdb206.pgm  mdb261.pgm  mdb316.pgm
+mdb042.pgm   mdb097.pgm  mdb152.pgm  mdb207.pgm  mdb262.pgm  mdb317.pgm
+mdb043.pgm   mdb098.pgm  mdb153.pgm  mdb208.pgm  mdb263.pgm  mdb318.pgm
+mdb044.pgm   mdb099.pgm  mdb154.pgm  mdb209.pgm  mdb264.pgm  mdb319.pgm
+mdb045.pgm   mdb100.pgm  mdb155.pgm  mdb210.pgm  mdb265.pgm  mdb320.pgm
+mdb046.pgm   mdb101.pgm  mdb156.pgm  mdb211.pgm  mdb266.pgm  mdb321.pgm
+mdb047.pgm   mdb102.pgm  mdb157.pgm  mdb212.pgm  mdb267.pgm  mdb322.pgm
+mdb048.pgm   mdb103.pgm  mdb158.pgm  mdb213.pgm  mdb268.pgm  README
+mdb049.pgm   mdb104.pgm  mdb159.pgm  mdb214.pgm  mdb269.pgm
+mdb050.pgm   mdb105.pgm  mdb160.pgm  mdb215.pgm  mdb270.pgm
+mdb051.pgm   mdb106.pgm  mdb161.pgm  mdb216.pgm  mdb271.pgm
+mdb052.pgm   mdb107.pgm  mdb162.pgm  mdb217.pgm  mdb272.pgm
+mdb053.pgm   mdb108.pgm  mdb163.pgm  mdb218.pgm  mdb273.pgm
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation/:all-mias$ cd ..
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+:all-mias  all-mias.tar     dataset      log_reg.py             README.md
+all-mias   all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ rm all-mias
+rm: cannot remove 'all-mias': Is a directory
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ rm -r all-mias
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ mv :all-mias all-mias
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias      all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+all-mias.tar  dataset          log_reg.py   README.md
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ rm all-mias.tar
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias         dataset      log_reg.py             README.md
+all-mias.tar.gz  get_data.py  milestone_keras.ipynb  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ exit()
+> 
+> 
+> 
+> ^C
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ exit
+logout
+Connection to 104.198.97.74 closed.
+prellis_host:gcloud Sajana$ gcloud compute ssh --zone=us-west1-b tumor-seg-cpu
+======================================
+Welcome to the Google Deep Learning VM
+======================================
+
+Version: m12
+Based on: Debian GNU/Linux 9.6 (stretch) (GNU/Linux 4.9.0-8-amd64 x86_64\n)
+
+Resources:
+ * Google Deep Learning Platform StackOverflow: https://stackoverflow.com/questions/tagged/google-dl-platform
+ * Google Cloud Documentation: https://cloud.google.com/deep-learning-vm
+ * Google Group: https://groups.google.com/forum/#!forum/google-dl-platform
+
+To reinstall Nvidia driver (if needed) run:
+sudo /opt/deeplearning/install-driver.sh
+TensorFlow comes pre-installed with this image. To install TensorFlow binaries in a virtualenv (or conda env),
+please use the binaries that are pre-built for this image. You can find the binaries at
+/opt/deeplearning/binaries/tensorflow/
+If you need to install a different version of Tensorflow manually, use the common Deep Learning image with the
+right version of CUDA
+
+Linux tumor-seg-cpu 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Sajana@tumor-seg-cpu:~$ conda -v
+-bash: conda: command not found
+Sajana@tumor-seg-cpu:~$ curl -O https://repo.continuum.io/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  637M  100  637M    0     0   112M      0  0:00:05  0:00:05 --:--:--  114M
+Sajana@tumor-seg-cpu:~$ sha256sum Anaconda3-5.0.1-Linux-x86_64.sh
+sha256sum: Anaconda3-5.0.1-Linux-x86_64.sh: No such file or directory
+Sajana@tumor-seg-cpu:~$ sha256sum Anaconda3-5.3.1-Linux-x86_64.sh
+d4c4256a8f46173b675dd6a62d12f566ed3487f932bab6bb7058f06c124bcc27  Anaconda3-5.3.1-Linux-x86_64.sh
+Sajana@tumor-seg-cpu:~$ bash Anaconda3-5.3.1-Linux-x86_64.sh
+
+Welcome to Anaconda3 5.3.1
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>> 
+===================================
+Anaconda End User License Agreement
+===================================
+
+Copyright 2015, Anaconda, Inc.
+
+All rights reserved under the 3-clause BSD License:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the followin
+g conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disc
+laimer.
+  * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following d
+isclaimer in the documentation and/or other materials provided with the distribution.
+  * Neither the name of Anaconda, Inc. ("Anaconda, Inc.") nor the names of its contributors may be used to endorse or pro
+mote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUD
+ING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. I
+N NO EVENT SHALL ANACONDA, INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMA
+GES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINE
+SS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
+DAMAGE.
+
+Notice of Third Party Software Licenses
+=======================================
+
+Anaconda Distribution contains open source software packages from third parties. These are available on an "as is" basis 
+and subject to their individual license agreements. These licenses are available in Anaconda Distribution or at http://do
+cs.anaconda.com/anaconda/pkg-docs. Any binary packages of these third party tools you obtain via Anaconda Distribution ar
+e subject to their individual licenses as well as the Anaconda license. Anaconda, Inc. reserves the right to change which
+ third party tools are provided in Anaconda Distribution.
+
+In particular, Anaconda Distribution contains re-distributable, run-time, shared-library files from the Intel(TM) Math Ke
+rnel Library ("MKL binaries"). You are specifically authorized to use the MKL binaries with your installation of Anaconda
+ Distribution. You are also authorized to redistribute the MKL binaries with Anaconda Distribution or in the conda packag
+e that contains them. Use and redistribution of the MKL binaries are subject to the licensing terms located at https://so
+ftware.intel.com/en-us/license/intel-simplified-software-license. If needed, instructions for removing the MKL binaries a
+fter installation of Anaconda Distribution are available at http://www.anaconda.com.
+
+Anaconda Distribution also contains cuDNN software binaries from NVIDIA Corporation ("cuDNN binaries"). You are specifica
+lly authorized to use the cuDNN binaries with your installation of Anaconda Distribution. You are also authorized to redi
+stribute the cuDNN binaries with an Anaconda Distribution package that contains them. If needed, instructions for removin
+g the cuDNN binaries after installation of Anaconda Distribution are available at http://www.anaconda.com.
+
+
+Anaconda Distribution also contains Visual Studio Code software binaries from Microsoft Corporation ("VS Code"). You are 
+specifically authorized to use VS Code with your installation of Anaconda Distribution. Use of VS Code is subject to the 
+licensing terms located at https://code.visualstudio.com/License.
+
+Cryptography Notice
+===================
+
+This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the
+ import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption softwa
+re, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export o
+f encryption software, to see if this is permitted. See the Wassenaar Arrangement http://www.wassenaar.org/ for more info
+rmation.
+
+Anaconda, Inc. has self-classified this software as Export Commodity Control Number (ECCN) 5D992b, which includes mass ma
+rket information security software using or performing cryptographic functions with asymmetric algorithms. No license is 
+required for export of this software to non-embargoed countries. In addition, the Intel(TM) Math Kernel Library contained
+ in Anaconda, Inc.'s software is classified by Intel(TM) as ECCN 5D992b with no license required for export to non-embarg
+oed countries and Microsoft's Visual Studio Code software is classified by Microsoft as ECCN 5D992.c with no license requ
+ired for export to non-embargoed countries.
+
+The following packages are included in this distribution that relate to cryptography:
+
+openssl
+    The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured, and Open Source t
+oolkit implementing the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols as well as a full-strengt
+h general purpose cryptography library.
+
+pycrypto
+    A collection of both secure hash functions (such as SHA256 and RIPEMD160), and various encryption algorithms (AES, DE
+S, RSA, ElGamal, etc.).
+
+pyopenssl
+    A thin Python wrapper around (a subset of) the OpenSSL library.
+
+kerberos (krb5, non-Windows platforms)
+    A network authentication protocol designed to provide strong authentication for client/server applications by using s
+ecret-key cryptography.
+
+cryptography
+    A Python library which exposes cryptographic recipes and primitives.
+
+
+Do you accept the license terms? [yes|no]
+[no] >>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> 
+Please answer 'yes' or 'no':'
+>>> yes
+
+Anaconda3 will now be installed into this location:
+/home/Sajana/anaconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/Sajana/anaconda3] >>> 
+PREFIX=/home/Sajana/anaconda3
+installing: python-3.7.0-hc3d631a_0 ...
+Python 3.7.0
+installing: blas-1.0-mkl ...
+installing: ca-certificates-2018.03.07-0 ...
+installing: conda-env-2.6.0-1 ...
+installing: intel-openmp-2019.0-118 ...
+installing: libgcc-ng-8.2.0-hdf63c60_1 ...
+installing: libgfortran-ng-7.3.0-hdf63c60_0 ...
+installing: libstdcxx-ng-8.2.0-hdf63c60_1 ...
+installing: bzip2-1.0.6-h14c3975_5 ...
+installing: expat-2.2.6-he6710b0_0 ...
+installing: fribidi-1.0.5-h7b6447c_0 ...
+installing: gmp-6.1.2-h6c8ec71_1 ...
+installing: graphite2-1.3.12-h23475e2_2 ...
+installing: icu-58.2-h9c2bf20_1 ...
+installing: jbig-2.1-hdba287a_0 ...
+installing: jpeg-9b-h024ee3a_2 ...
+installing: libffi-3.2.1-hd88cf55_4 ...
+installing: libsodium-1.0.16-h1bed415_0 ...
+installing: libtool-2.4.6-h544aabb_3 ...
+installing: libuuid-1.0.3-h1bed415_2 ...
+installing: libxcb-1.13-h1bed415_1 ...
+installing: lzo-2.10-h49e0be7_2 ...
+installing: mkl-2019.0-118 ...
+installing: ncurses-6.1-hf484d3e_0 ...
+installing: openssl-1.0.2p-h14c3975_0 ...
+installing: patchelf-0.9-hf484d3e_2 ...
+installing: pcre-8.42-h439df22_0 ...
+installing: pixman-0.34.0-hceecf20_3 ...
+installing: snappy-1.1.7-hbae5bb6_3 ...
+installing: xz-5.2.4-h14c3975_4 ...
+installing: yaml-0.1.7-had09818_2 ...
+installing: zlib-1.2.11-ha838bed_2 ...
+installing: blosc-1.14.4-hdbcaa40_0 ...
+installing: glib-2.56.2-hd408876_0 ...
+installing: hdf5-1.10.2-hba1933b_1 ...
+installing: libedit-3.1.20170329-h6b74fdf_2 ...
+installing: libpng-1.6.34-hb9fc6fc_0 ...
+installing: libssh2-1.8.0-h9cfc8f7_4 ...
+installing: libtiff-4.0.9-he85c1e1_2 ...
+installing: libxml2-2.9.8-h26e45fe_1 ...
+installing: mpfr-4.0.1-hdf1c602_3 ...
+installing: pandoc-1.19.2.1-hea2e7c5_1 ...
+installing: readline-7.0-h7b6447c_5 ...
+installing: tk-8.6.8-hbc83047_0 ...
+installing: zeromq-4.2.5-hf484d3e_1 ...
+installing: dbus-1.13.2-h714fa37_1 ...
+installing: freetype-2.9.1-h8a8886c_1 ...
+installing: gstreamer-1.14.0-hb453b48_1 ...
+installing: libcurl-7.61.0-h1ad7b7a_0 ...
+installing: libxslt-1.1.32-h1312cb7_0 ...
+installing: mpc-1.1.0-h10f8cd9_1 ...
+installing: sqlite-3.24.0-h84994c4_0 ...
+installing: unixodbc-2.3.7-h14c3975_0 ...
+installing: curl-7.61.0-h84994c4_0 ...
+installing: fontconfig-2.13.0-h9420a91_0 ...
+installing: gst-plugins-base-1.14.0-hbbd80ab_1 ...
+installing: alabaster-0.7.11-py37_0 ...
+installing: appdirs-1.4.3-py37h28b3542_0 ...
+installing: asn1crypto-0.24.0-py37_0 ...
+installing: atomicwrites-1.2.1-py37_0 ...
+installing: attrs-18.2.0-py37h28b3542_0 ...
+installing: backcall-0.1.0-py37_0 ...
+installing: backports-1.0-py37_1 ...
+installing: beautifulsoup4-4.6.3-py37_0 ...
+installing: bitarray-0.8.3-py37h14c3975_0 ...
+installing: boto-2.49.0-py37_0 ...
+installing: cairo-1.14.12-h8948797_3 ...
+installing: certifi-2018.8.24-py37_1 ...
+installing: chardet-3.0.4-py37_1 ...
+installing: click-6.7-py37_0 ...
+installing: cloudpickle-0.5.5-py37_0 ...
+installing: colorama-0.3.9-py37_0 ...
+installing: constantly-15.1.0-py37h28b3542_0 ...
+installing: contextlib2-0.5.5-py37_0 ...
+installing: dask-core-0.19.1-py37_0 ...
+installing: decorator-4.3.0-py37_0 ...
+installing: defusedxml-0.5.0-py37_1 ...
+installing: docutils-0.14-py37_0 ...
+installing: entrypoints-0.2.3-py37_2 ...
+installing: et_xmlfile-1.0.1-py37_0 ...
+installing: fastcache-1.0.2-py37h14c3975_2 ...
+installing: filelock-3.0.8-py37_0 ...
+installing: glob2-0.6-py37_0 ...
+installing: gmpy2-2.0.8-py37h10f8cd9_2 ...
+installing: greenlet-0.4.15-py37h7b6447c_0 ...
+installing: heapdict-1.0.0-py37_2 ...
+installing: idna-2.7-py37_0 ...
+installing: imagesize-1.1.0-py37_0 ...
+installing: incremental-17.5.0-py37_0 ...
+installing: ipython_genutils-0.2.0-py37_0 ...
+installing: itsdangerous-0.24-py37_1 ...
+installing: jdcal-1.4-py37_0 ...
+installing: jeepney-0.3.1-py37_0 ...
+installing: kiwisolver-1.0.1-py37hf484d3e_0 ...
+installing: lazy-object-proxy-1.3.1-py37h14c3975_2 ...
+installing: llvmlite-0.24.0-py37hdbcaa40_0 ...
+installing: locket-0.2.0-py37_1 ...
+installing: lxml-4.2.5-py37hefd8a0e_0 ...
+installing: markupsafe-1.0-py37h14c3975_1 ...
+installing: mccabe-0.6.1-py37_1 ...
+installing: mistune-0.8.3-py37h14c3975_1 ...
+installing: mkl-service-1.1.2-py37h90e4bf4_5 ...
+installing: mpmath-1.0.0-py37_2 ...
+installing: msgpack-python-0.5.6-py37h6bb024c_1 ...
+installing: numpy-base-1.15.1-py37h81de0dd_0 ...
+installing: olefile-0.46-py37_0 ...
+installing: pandocfilters-1.4.2-py37_1 ...
+installing: parso-0.3.1-py37_0 ...
+installing: path.py-11.1.0-py37_0 ...
+installing: pep8-1.7.1-py37_0 ...
+installing: pickleshare-0.7.4-py37_0 ...
+installing: pkginfo-1.4.2-py37_1 ...
+installing: pluggy-0.7.1-py37h28b3542_0 ...
+installing: ply-3.11-py37_0 ...
+installing: psutil-5.4.7-py37h14c3975_0 ...
+installing: ptyprocess-0.6.0-py37_0 ...
+installing: py-1.6.0-py37_0 ...
+installing: pyasn1-0.4.4-py37h28b3542_0 ...
+installing: pycodestyle-2.4.0-py37_0 ...
+installing: pycosat-0.6.3-py37h14c3975_0 ...
+installing: pycparser-2.18-py37_1 ...
+installing: pycrypto-2.6.1-py37h14c3975_9 ...
+installing: pycurl-7.43.0.2-py37hb7f436b_0 ...
+installing: pyflakes-2.0.0-py37_0 ...
+installing: pyodbc-4.0.24-py37he6710b0_0 ...
+installing: pyparsing-2.2.0-py37_1 ...
+installing: pysocks-1.6.8-py37_0 ...
+installing: pytz-2018.5-py37_0 ...
+installing: pyyaml-3.13-py37h14c3975_0 ...
+installing: pyzmq-17.1.2-py37h14c3975_0 ...
+installing: qt-5.9.6-h8703b6f_2 ...
+installing: qtpy-1.5.0-py37_0 ...
+installing: rope-0.11.0-py37_0 ...
+installing: ruamel_yaml-0.15.46-py37h14c3975_0 ...
+installing: send2trash-1.5.0-py37_0 ...
+installing: simplegeneric-0.8.1-py37_2 ...
+installing: sip-4.19.8-py37hf484d3e_0 ...
+installing: six-1.11.0-py37_1 ...
+installing: snowballstemmer-1.2.1-py37_0 ...
+installing: sortedcontainers-2.0.5-py37_0 ...
+installing: sphinxcontrib-1.0-py37_1 ...
+installing: sqlalchemy-1.2.11-py37h7b6447c_0 ...
+installing: tblib-1.3.2-py37_0 ...
+installing: testpath-0.3.1-py37_0 ...
+installing: toolz-0.9.0-py37_0 ...
+installing: tornado-5.1-py37h14c3975_0 ...
+installing: tqdm-4.26.0-py37h28b3542_0 ...
+installing: unicodecsv-0.14.1-py37_0 ...
+installing: wcwidth-0.1.7-py37_0 ...
+installing: webencodings-0.5.1-py37_1 ...
+installing: werkzeug-0.14.1-py37_0 ...
+installing: wrapt-1.10.11-py37h14c3975_2 ...
+installing: xlrd-1.1.0-py37_1 ...
+installing: xlsxwriter-1.1.0-py37_0 ...
+installing: xlwt-1.3.0-py37_0 ...
+installing: zope-1.0-py37_1 ...
+installing: astroid-2.0.4-py37_0 ...
+installing: automat-0.7.0-py37_0 ...
+installing: babel-2.6.0-py37_0 ...
+installing: backports.shutil_get_terminal_size-1.0.0-py37_2 ...
+installing: cffi-1.11.5-py37he75722e_1 ...
+installing: cycler-0.10.0-py37_0 ...
+installing: cytoolz-0.9.0.1-py37h14c3975_1 ...
+installing: harfbuzz-1.8.8-hffaf4a1_0 ...
+installing: html5lib-1.0.1-py37_0 ...
+installing: hyperlink-18.0.0-py37_0 ...
+installing: jedi-0.12.1-py37_0 ...
+installing: more-itertools-4.3.0-py37_0 ...
+installing: multipledispatch-0.6.0-py37_0 ...
+installing: networkx-2.1-py37_0 ...
+installing: nltk-3.3.0-py37_0 ...
+installing: openpyxl-2.5.6-py37_0 ...
+installing: packaging-17.1-py37_0 ...
+installing: partd-0.3.8-py37_0 ...
+installing: pathlib2-2.3.2-py37_0 ...
+installing: pexpect-4.6.0-py37_0 ...
+installing: pillow-5.2.0-py37heded4f4_0 ...
+installing: pyasn1-modules-0.2.2-py37_0 ...
+installing: pyqt-5.9.2-py37h05f1152_2 ...
+installing: python-dateutil-2.7.3-py37_0 ...
+installing: qtawesome-0.4.4-py37_0 ...
+installing: setuptools-40.2.0-py37_0 ...
+installing: singledispatch-3.4.0.3-py37_0 ...
+installing: sortedcollections-1.0.1-py37_0 ...
+installing: sphinxcontrib-websupport-1.1.0-py37_1 ...
+installing: sympy-1.2-py37_0 ...
+installing: terminado-0.8.1-py37_1 ...
+installing: traitlets-4.3.2-py37_0 ...
+installing: zict-0.1.3-py37_0 ...
+installing: zope.interface-4.5.0-py37h14c3975_0 ...
+installing: bleach-2.1.4-py37_0 ...
+installing: clyent-1.2.2-py37_1 ...
+installing: cryptography-2.3.1-py37hc365091_0 ...
+installing: cython-0.28.5-py37hf484d3e_0 ...
+installing: distributed-1.23.1-py37_0 ...
+installing: get_terminal_size-1.0.0-haa9412d_0 ...
+installing: gevent-1.3.6-py37h7b6447c_0 ...
+installing: isort-4.3.4-py37_0 ...
+installing: jinja2-2.10-py37_0 ...
+installing: jsonschema-2.6.0-py37_0 ...
+installing: jupyter_core-4.4.0-py37_0 ...
+installing: navigator-updater-0.2.1-py37_0 ...
+installing: nose-1.3.7-py37_2 ...
+installing: pango-1.42.4-h049681c_0 ...
+installing: pygments-2.2.0-py37_0 ...
+installing: pytest-3.8.0-py37_0 ...
+installing: wheel-0.31.1-py37_0 ...
+installing: flask-1.0.2-py37_1 ...
+installing: jupyter_client-5.2.3-py37_0 ...
+installing: nbformat-4.4.0-py37_0 ...
+installing: pip-10.0.1-py37_0 ...
+installing: prompt_toolkit-1.0.15-py37_0 ...
+installing: pylint-2.1.1-py37_0 ...
+installing: pyopenssl-18.0.0-py37_0 ...
+installing: pytest-openfiles-0.3.0-py37_0 ...
+installing: pytest-remotedata-0.3.0-py37_0 ...
+installing: secretstorage-3.1.0-py37_0 ...
+installing: flask-cors-3.0.6-py37_0 ...
+installing: ipython-6.5.0-py37_0 ...
+installing: keyring-13.2.1-py37_0 ...
+installing: nbconvert-5.4.0-py37_1 ...
+installing: service_identity-17.0.0-py37h28b3542_0 ...
+installing: urllib3-1.23-py37_0 ...
+installing: ipykernel-4.9.0-py37_1 ...
+installing: requests-2.19.1-py37_0 ...
+installing: twisted-18.7.0-py37h14c3975_1 ...
+installing: anaconda-client-1.7.2-py37_0 ...
+installing: jupyter_console-5.2.0-py37_1 ...
+installing: prometheus_client-0.3.1-py37h28b3542_0 ...
+installing: qtconsole-4.4.1-py37_0 ...
+installing: sphinx-1.7.9-py37_0 ...
+installing: spyder-kernels-0.2.6-py37_0 ...
+installing: anaconda-navigator-1.9.2-py37_0 ...
+installing: anaconda-project-0.8.2-py37_0 ...
+installing: notebook-5.6.0-py37_0 ...
+installing: numpydoc-0.8.0-py37_0 ...
+installing: jupyterlab_launcher-0.13.1-py37_0 ...
+installing: spyder-3.3.1-py37_1 ...
+installing: widgetsnbextension-3.4.1-py37_0 ...
+installing: ipywidgets-7.4.1-py37_0 ...
+installing: jupyterlab-0.34.9-py37_0 ...
+installing: _ipyw_jlab_nb_ext_conf-0.1.0-py37_0 ...
+installing: jupyter-1.0.0-py37_7 ...
+installing: bokeh-0.13.0-py37_0 ...
+installing: bottleneck-1.2.1-py37h035aef0_1 ...
+installing: conda-4.5.11-py37_0 ...
+installing: conda-build-3.15.1-py37_0 ...
+installing: datashape-0.5.4-py37_1 ...
+installing: h5py-2.8.0-py37h989c5e5_3 ...
+installing: imageio-2.4.1-py37_0 ...
+installing: matplotlib-2.2.3-py37hb69df0a_0 ...
+installing: mkl_fft-1.0.4-py37h4414c95_1 ...
+installing: mkl_random-1.0.1-py37h4414c95_1 ...
+installing: numpy-1.15.1-py37h1d66e8a_0 ...
+installing: numba-0.39.0-py37h04863e7_0 ...
+installing: numexpr-2.6.8-py37hd89afb7_0 ...
+installing: pandas-0.23.4-py37h04863e7_0 ...
+installing: pytest-arraydiff-0.2-py37h39e3cac_0 ...
+installing: pytest-doctestplus-0.1.3-py37_0 ...
+installing: pywavelets-1.0.0-py37hdd07704_0 ...
+installing: scipy-1.1.0-py37hfa4b5c9_1 ...
+installing: bkcharts-0.2-py37_0 ...
+installing: dask-0.19.1-py37_0 ...
+installing: patsy-0.5.0-py37_0 ...
+installing: pytables-3.4.4-py37ha205bf6_0 ...
+installing: pytest-astropy-0.4.0-py37_0 ...
+installing: scikit-image-0.14.0-py37hf484d3e_1 ...
+installing: scikit-learn-0.19.2-py37h4989274_0 ...
+installing: astropy-3.0.4-py37h14c3975_0 ...
+installing: odo-0.5.1-py37_0 ...
+installing: statsmodels-0.9.0-py37h035aef0_0 ...
+installing: blaze-0.11.3-py37_0 ...
+installing: seaborn-0.9.0-py37_0 ...
+installing: anaconda-5.3.1-py37_0 ...
+installation finished.
+Do you wish the installer to initialize Anaconda3
+in your /home/Sajana/.bashrc ? [yes|no]
+[no] >>> yes
+
+Initializing Anaconda3 in /home/Sajana/.bashrc
+A backup will be made to: /home/Sajana/.bashrc-anaconda3.bak
+
+
+For this change to become active, you have to open a new terminal.
+
+Thank you for installing Anaconda3!
+
+===========================================================================
+
+Anaconda is partnered with Microsoft! Microsoft VSCode is a streamlined
+code editor with support for development operations like debugging, task
+running and version control.
+
+To install Visual Studio Code, you will need:
+  - Administrator Privileges
+  - Internet connectivity
+
+Visual Studio Code License: https://code.visualstudio.com/license
+
+Do you wish to proceed with the installation of Microsoft VSCode? [yes|no]
+>>> no
+Sajana@tumor-seg-cpu:~$ source ~/.bashrc
+Sajana@tumor-seg-cpu:~$ conda list
+# packages in environment at /home/Sajana/anaconda3:
+#
+# Name                    Version                   Build  Channel
+_ipyw_jlab_nb_ext_conf    0.1.0                    py37_0  
+alabaster                 0.7.11                   py37_0  
+anaconda                  5.3.1                    py37_0  
+anaconda-client           1.7.2                    py37_0  
+anaconda-navigator        1.9.2                    py37_0  
+anaconda-project          0.8.2                    py37_0  
+appdirs                   1.4.3            py37h28b3542_0  
+asn1crypto                0.24.0                   py37_0  
+astroid                   2.0.4                    py37_0  
+astropy                   3.0.4            py37h14c3975_0  
+atomicwrites              1.2.1                    py37_0  
+attrs                     18.2.0           py37h28b3542_0  
+automat                   0.7.0                    py37_0  
+babel                     2.6.0                    py37_0  
+backcall                  0.1.0                    py37_0  
+backports                 1.0                      py37_1  
+backports.shutil_get_terminal_size 1.0.0                    py37_2  
+beautifulsoup4            4.6.3                    py37_0  
+bitarray                  0.8.3            py37h14c3975_0  
+bkcharts                  0.2                      py37_0  
+blas                      1.0                         mkl  
+blaze                     0.11.3                   py37_0  
+bleach                    2.1.4                    py37_0  
+blosc                     1.14.4               hdbcaa40_0  
+bokeh                     0.13.0                   py37_0  
+boto                      2.49.0                   py37_0  
+bottleneck                1.2.1            py37h035aef0_1  
+bzip2                     1.0.6                h14c3975_5  
+ca-certificates           2018.03.07                    0  
+cairo                     1.14.12              h8948797_3  
+certifi                   2018.8.24                py37_1  
+cffi                      1.11.5           py37he75722e_1  
+chardet                   3.0.4                    py37_1  
+click                     6.7                      py37_0  
+cloudpickle               0.5.5                    py37_0  
+clyent                    1.2.2                    py37_1  
+colorama                  0.3.9                    py37_0  
+conda                     4.5.11                   py37_0  
+conda-build               3.15.1                   py37_0  
+conda-env                 2.6.0                         1  
+constantly                15.1.0           py37h28b3542_0  
+contextlib2               0.5.5                    py37_0  
+cryptography              2.3.1            py37hc365091_0  
+curl                      7.61.0               h84994c4_0  
+cycler                    0.10.0                   py37_0  
+cython                    0.28.5           py37hf484d3e_0  
+cytoolz                   0.9.0.1          py37h14c3975_1  
+dask                      0.19.1                   py37_0  
+dask-core                 0.19.1                   py37_0  
+datashape                 0.5.4                    py37_1  
+dbus                      1.13.2               h714fa37_1  
+decorator                 4.3.0                    py37_0  
+defusedxml                0.5.0                    py37_1  
+distributed               1.23.1                   py37_0  
+docutils                  0.14                     py37_0  
+entrypoints               0.2.3                    py37_2  
+et_xmlfile                1.0.1                    py37_0  
+expat                     2.2.6                he6710b0_0  
+fastcache                 1.0.2            py37h14c3975_2  
+filelock                  3.0.8                    py37_0  
+flask                     1.0.2                    py37_1  
+flask-cors                3.0.6                    py37_0  
+fontconfig                2.13.0               h9420a91_0  
+freetype                  2.9.1                h8a8886c_1  
+fribidi                   1.0.5                h7b6447c_0  
+get_terminal_size         1.0.0                haa9412d_0  
+gevent                    1.3.6            py37h7b6447c_0  
+glib                      2.56.2               hd408876_0  
+glob2                     0.6                      py37_0  
+gmp                       6.1.2                h6c8ec71_1  
+gmpy2                     2.0.8            py37h10f8cd9_2  
+graphite2                 1.3.12               h23475e2_2  
+greenlet                  0.4.15           py37h7b6447c_0  
+gst-plugins-base          1.14.0               hbbd80ab_1  
+gstreamer                 1.14.0               hb453b48_1  
+h5py                      2.8.0            py37h989c5e5_3  
+harfbuzz                  1.8.8                hffaf4a1_0  
+hdf5                      1.10.2               hba1933b_1  
+heapdict                  1.0.0                    py37_2  
+html5lib                  1.0.1                    py37_0  
+hyperlink                 18.0.0                   py37_0  
+icu                       58.2                 h9c2bf20_1  
+idna                      2.7                      py37_0  
+imageio                   2.4.1                    py37_0  
+imagesize                 1.1.0                    py37_0  
+incremental               17.5.0                   py37_0  
+intel-openmp              2019.0                      118  
+ipykernel                 4.9.0                    py37_1  
+ipython                   6.5.0                    py37_0  
+ipython_genutils          0.2.0                    py37_0  
+ipywidgets                7.4.1                    py37_0  
+isort                     4.3.4                    py37_0  
+itsdangerous              0.24                     py37_1  
+jbig                      2.1                  hdba287a_0  
+jdcal                     1.4                      py37_0  
+jedi                      0.12.1                   py37_0  
+jeepney                   0.3.1                    py37_0  
+jinja2                    2.10                     py37_0  
+jpeg                      9b                   h024ee3a_2  
+jsonschema                2.6.0                    py37_0  
+jupyter                   1.0.0                    py37_7  
+jupyter_client            5.2.3                    py37_0  
+jupyter_console           5.2.0                    py37_1  
+jupyter_core              4.4.0                    py37_0  
+jupyterlab                0.34.9                   py37_0  
+jupyterlab_launcher       0.13.1                   py37_0  
+keyring                   13.2.1                   py37_0  
+kiwisolver                1.0.1            py37hf484d3e_0  
+lazy-object-proxy         1.3.1            py37h14c3975_2  
+libcurl                   7.61.0               h1ad7b7a_0  
+libedit                   3.1.20170329         h6b74fdf_2  
+libffi                    3.2.1                hd88cf55_4  
+libgcc-ng                 8.2.0                hdf63c60_1  
+libgfortran-ng            7.3.0                hdf63c60_0  
+libpng                    1.6.34               hb9fc6fc_0  
+libsodium                 1.0.16               h1bed415_0  
+libssh2                   1.8.0                h9cfc8f7_4  
+libstdcxx-ng              8.2.0                hdf63c60_1  
+libtiff                   4.0.9                he85c1e1_2  
+libtool                   2.4.6                h544aabb_3  
+libuuid                   1.0.3                h1bed415_2  
+libxcb                    1.13                 h1bed415_1  
+libxml2                   2.9.8                h26e45fe_1  
+libxslt                   1.1.32               h1312cb7_0  
+llvmlite                  0.24.0           py37hdbcaa40_0  
+locket                    0.2.0                    py37_1  
+lxml                      4.2.5            py37hefd8a0e_0  
+lzo                       2.10                 h49e0be7_2  
+markupsafe                1.0              py37h14c3975_1  
+matplotlib                2.2.3            py37hb69df0a_0  
+mccabe                    0.6.1                    py37_1  
+mistune                   0.8.3            py37h14c3975_1  
+mkl                       2019.0                      118  
+mkl-service               1.1.2            py37h90e4bf4_5  
+mkl_fft                   1.0.4            py37h4414c95_1  
+mkl_random                1.0.1            py37h4414c95_1  
+more-itertools            4.3.0                    py37_0  
+mpc                       1.1.0                h10f8cd9_1  
+mpfr                      4.0.1                hdf1c602_3  
+mpmath                    1.0.0                    py37_2  
+msgpack-python            0.5.6            py37h6bb024c_1  
+multipledispatch          0.6.0                    py37_0  
+navigator-updater         0.2.1                    py37_0  
+nbconvert                 5.4.0                    py37_1  
+nbformat                  4.4.0                    py37_0  
+ncurses                   6.1                  hf484d3e_0  
+networkx                  2.1                      py37_0  
+nltk                      3.3.0                    py37_0  
+nose                      1.3.7                    py37_2  
+notebook                  5.6.0                    py37_0  
+numba                     0.39.0           py37h04863e7_0  
+numexpr                   2.6.8            py37hd89afb7_0  
+numpy                     1.15.1           py37h1d66e8a_0  
+numpy-base                1.15.1           py37h81de0dd_0  
+numpydoc                  0.8.0                    py37_0  
+odo                       0.5.1                    py37_0  
+olefile                   0.46                     py37_0  
+openpyxl                  2.5.6                    py37_0  
+openssl                   1.0.2p               h14c3975_0  
+packaging                 17.1                     py37_0  
+pandas                    0.23.4           py37h04863e7_0  
+pandoc                    1.19.2.1             hea2e7c5_1  
+pandocfilters             1.4.2                    py37_1  
+pango                     1.42.4               h049681c_0  
+parso                     0.3.1                    py37_0  
+partd                     0.3.8                    py37_0  
+patchelf                  0.9                  hf484d3e_2  
+path.py                   11.1.0                   py37_0  
+pathlib2                  2.3.2                    py37_0  
+patsy                     0.5.0                    py37_0  
+pcre                      8.42                 h439df22_0  
+pep8                      1.7.1                    py37_0  
+pexpect                   4.6.0                    py37_0  
+pickleshare               0.7.4                    py37_0  
+pillow                    5.2.0            py37heded4f4_0  
+pip                       10.0.1                   py37_0  
+pixman                    0.34.0               hceecf20_3  
+pkginfo                   1.4.2                    py37_1  
+pluggy                    0.7.1            py37h28b3542_0  
+ply                       3.11                     py37_0  
+prometheus_client         0.3.1            py37h28b3542_0  
+prompt_toolkit            1.0.15                   py37_0  
+psutil                    5.4.7            py37h14c3975_0  
+ptyprocess                0.6.0                    py37_0  
+py                        1.6.0                    py37_0  
+pyasn1                    0.4.4            py37h28b3542_0  
+pyasn1-modules            0.2.2                    py37_0  
+pycodestyle               2.4.0                    py37_0  
+pycosat                   0.6.3            py37h14c3975_0  
+pycparser                 2.18                     py37_1  
+pycrypto                  2.6.1            py37h14c3975_9  
+pycurl                    7.43.0.2         py37hb7f436b_0  
+pyflakes                  2.0.0                    py37_0  
+pygments                  2.2.0                    py37_0  
+pylint                    2.1.1                    py37_0  
+pyodbc                    4.0.24           py37he6710b0_0  
+pyopenssl                 18.0.0                   py37_0  
+pyparsing                 2.2.0                    py37_1  
+pyqt                      5.9.2            py37h05f1152_2  
+pysocks                   1.6.8                    py37_0  
+pytables                  3.4.4            py37ha205bf6_0  
+pytest                    3.8.0                    py37_0  
+pytest-arraydiff          0.2              py37h39e3cac_0  
+pytest-astropy            0.4.0                    py37_0  
+pytest-doctestplus        0.1.3                    py37_0  
+pytest-openfiles          0.3.0                    py37_0  
+pytest-remotedata         0.3.0                    py37_0  
+python                    3.7.0                hc3d631a_0  
+python-dateutil           2.7.3                    py37_0  
+pytz                      2018.5                   py37_0  
+pywavelets                1.0.0            py37hdd07704_0  
+pyyaml                    3.13             py37h14c3975_0  
+pyzmq                     17.1.2           py37h14c3975_0  
+qt                        5.9.6                h8703b6f_2  
+qtawesome                 0.4.4                    py37_0  
+qtconsole                 4.4.1                    py37_0  
+qtpy                      1.5.0                    py37_0  
+readline                  7.0                  h7b6447c_5  
+requests                  2.19.1                   py37_0  
+rope                      0.11.0                   py37_0  
+ruamel_yaml               0.15.46          py37h14c3975_0  
+scikit-image              0.14.0           py37hf484d3e_1  
+scikit-learn              0.19.2           py37h4989274_0  
+scipy                     1.1.0            py37hfa4b5c9_1  
+seaborn                   0.9.0                    py37_0  
+secretstorage             3.1.0                    py37_0  
+send2trash                1.5.0                    py37_0  
+service_identity          17.0.0           py37h28b3542_0  
+setuptools                40.2.0                   py37_0  
+simplegeneric             0.8.1                    py37_2  
+singledispatch            3.4.0.3                  py37_0  
+sip                       4.19.8           py37hf484d3e_0  
+six                       1.11.0                   py37_1  
+snappy                    1.1.7                hbae5bb6_3  
+snowballstemmer           1.2.1                    py37_0  
+sortedcollections         1.0.1                    py37_0  
+sortedcontainers          2.0.5                    py37_0  
+sphinx                    1.7.9                    py37_0  
+sphinxcontrib             1.0                      py37_1  
+sphinxcontrib-websupport  1.1.0                    py37_1  
+spyder                    3.3.1                    py37_1  
+spyder-kernels            0.2.6                    py37_0  
+sqlalchemy                1.2.11           py37h7b6447c_0  
+sqlite                    3.24.0               h84994c4_0  
+statsmodels               0.9.0            py37h035aef0_0  
+sympy                     1.2                      py37_0  
+tblib                     1.3.2                    py37_0  
+terminado                 0.8.1                    py37_1  
+testpath                  0.3.1                    py37_0  
+tk                        8.6.8                hbc83047_0  
+toolz                     0.9.0                    py37_0  
+tornado                   5.1              py37h14c3975_0  
+tqdm                      4.26.0           py37h28b3542_0  
+traitlets                 4.3.2                    py37_0  
+twisted                   18.7.0           py37h14c3975_1  
+unicodecsv                0.14.1                   py37_0  
+unixodbc                  2.3.7                h14c3975_0  
+urllib3                   1.23                     py37_0  
+wcwidth                   0.1.7                    py37_0  
+webencodings              0.5.1                    py37_1  
+werkzeug                  0.14.1                   py37_0  
+wheel                     0.31.1                   py37_0  
+widgetsnbextension        3.4.1                    py37_0  
+wrapt                     1.10.11          py37h14c3975_2  
+xlrd                      1.1.0                    py37_1  
+xlsxwriter                1.1.0                    py37_0  
+xlwt                      1.3.0                    py37_0  
+xz                        5.2.4                h14c3975_4  
+yaml                      0.1.7                had09818_2  
+zeromq                    4.2.5                hf484d3e_1  
+zict                      0.1.3                    py37_0  
+zlib                      1.2.11               ha838bed_2  
+zope                      1.0                      py37_1  
+zope.interface            4.5.0            py37h14c3975_0  
+Sajana@tumor-seg-cpu:~$ ls
+anaconda3  Anaconda3-5.3.1-Linux-x86_64.sh  CS229-Tumor-Segmentation
+Sajana@tumor-seg-cpu:~$ cd CS229-Tumor-Segmentation/
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias  all-mias.tar.gz  dataset  get_data.py  log_reg.py  milestone_keras.ipynb  README.md  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ sudo apt-get install tmux
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+tmux is already the newest version (2.3-4).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ tmux new -s "juypt"
+[exited]
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ exit
+logout
+Connection to 104.196.254.63 closed.
+prellis_host:gcloud Sajana$ gcloud compute ssh --zone=us-west1-b tumor-seg-cpu
+======================================
+Welcome to the Google Deep Learning VM
+======================================
+
+Version: m12
+Based on: Debian GNU/Linux 9.6 (stretch) (GNU/Linux 4.9.0-8-amd64 x86_64\n)
+
+Resources:
+ * Google Deep Learning Platform StackOverflow: https://stackoverflow.com/questions/tagged/google-dl-platform
+ * Google Cloud Documentation: https://cloud.google.com/deep-learning-vm
+ * Google Group: https://groups.google.com/forum/#!forum/google-dl-platform
+
+To reinstall Nvidia driver (if needed) run:
+sudo /opt/deeplearning/install-driver.sh
+TensorFlow comes pre-installed with this image. To install TensorFlow binaries in a virtualenv (or conda env),
+please use the binaries that are pre-built for this image. You can find the binaries at
+/opt/deeplearning/binaries/tensorflow/
+If you need to install a different version of Tensorflow manually, use the common Deep Learning image with the
+right version of CUDA
+
+Linux tumor-seg-cpu 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Sajana@tumor-seg-cpu:~$ tmux new -s "juypt"
+[exited]
+Sajana@tumor-seg-cpu:~$ jupyter-notebook --no-browser --port=7000
+[W 03:59:06.107 NotebookApp] Error loading server extension jupyter_tensorboard
+    Traceback (most recent call last):
+      File "/home/Sajana/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1546, in init_server_extensions
+        mod = importlib.import_module(modulename)
+      File "/home/Sajana/anaconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+        return _bootstrap._gcd_import(name[level:], package, level)
+      File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+      File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+      File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+    ModuleNotFoundError: No module named 'jupyter_tensorboard'
+[I 03:59:06.132 NotebookApp] JupyterLab extension loaded from /home/Sajana/anaconda3/lib/python3.7/site-packages/jupyterlab
+[I 03:59:06.133 NotebookApp] JupyterLab application directory is /home/Sajana/anaconda3/share/jupyter/lab
+[I 03:59:06.136 NotebookApp] Serving notebooks from local directory: /home/Sajana
+[I 03:59:06.136 NotebookApp] The Jupyter Notebook is running at:
+[I 03:59:06.136 NotebookApp] http://localhost:7000/?token=e5081de55ff30da6f6b81eb606301c2c1b1a38abb2b53bb4
+[I 03:59:06.136 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 03:59:06.136 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:7000/?token=e5081de55ff30da6f6b81eb606301c2c1b1a38abb2b53bb4
+^[[B^C[I 03:59:30.367 NotebookApp] interrupted
+Serving notebooks from local directory: /home/Sajana
+0 active kernels
+The Jupyter Notebook is running at:
+http://localhost:7000/?token=e5081de55ff30da6f6b81eb606301c2c1b1a38abb2b53bb4
+Shutdown this notebook server (y/[n])? y
+[C 03:59:31.603 NotebookApp] Shutdown confirmed
+[I 03:59:31.604 NotebookApp] Shutting down 0 kernels
+Sajana@tumor-seg-cpu:~$ git pull
+fatal: Not a git repository (or any of the parent directories): .git
+Sajana@tumor-seg-cpu:~$ ls
+anaconda3  Anaconda3-5.3.1-Linux-x86_64.sh  CS229-Tumor-Segmentation
+Sajana@tumor-seg-cpu:~$ cd CS229-Tumor-Segmentation/
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ ls
+all-mias  all-mias.tar.gz  dataset  get_data.py  log_reg.py  milestone_keras.ipynb  README.md  util.py
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/HanLinAung88/CS229-Tumor-Segmentation
+   581e795..0b3bd06  master     -> origin/master
+Updating 581e795..0b3bd06
+Fast-forward
+ get_data.py           |  7 +++++++
+ milestone_keras.ipynb | 16 ++++++++++------
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ jupyter-notebook --no-browser --port=7000
+[W 04:00:16.588 NotebookApp] Error loading server extension jupyter_tensorboard
+    Traceback (most recent call last):
+      File "/home/Sajana/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1546, in init_server_extensions
+        mod = importlib.import_module(modulename)
+      File "/home/Sajana/anaconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+        return _bootstrap._gcd_import(name[level:], package, level)
+      File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+      File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+      File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+    ModuleNotFoundError: No module named 'jupyter_tensorboard'
+[I 04:00:16.614 NotebookApp] JupyterLab extension loaded from /home/Sajana/anaconda3/lib/python3.7/site-packages/jupyterlab
+[I 04:00:16.614 NotebookApp] JupyterLab application directory is /home/Sajana/anaconda3/share/jupyter/lab
+[I 04:00:16.617 NotebookApp] Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+[I 04:00:16.617 NotebookApp] The Jupyter Notebook is running at:
+[I 04:00:16.618 NotebookApp] http://localhost:7000/?token=a6843e750bd559a5c297e73d994300989a879135fae74072
+[I 04:00:16.618 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:00:16.618 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:7000/?token=a6843e750bd559a5c297e73d994300989a879135fae74072
+^C[I 04:02:53.933 NotebookApp] interrupted
+Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+0 active kernels
+The Jupyter Notebook is running at:
+http://localhost:7000/?token=a6843e750bd559a5c297e73d994300989a879135fae74072
+Shutdown this notebook server (y/[n])? y
+[C 04:02:54.962 NotebookApp] Shutdown confirmed
+[I 04:02:54.963 NotebookApp] Shutting down 0 kernels
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ gcutil addfirewall http --allowed=tcp:7000
+-bash: gcutil: command not found
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ conda install jupyter_tensorboard
+Solving environment: failed
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - jupyter_tensorboard
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/linux-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/free/linux-64
+  - https://repo.anaconda.com/pkgs/free/noarch
+  - https://repo.anaconda.com/pkgs/r/linux-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/pro/linux-64
+  - https://repo.anaconda.com/pkgs/pro/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ conda install -c p-vg jupyter-tensorboard 
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/Sajana/anaconda3
+
+  added / updated specs: 
+    - jupyter-tensorboard
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    locket-0.2.0               |           py36_1           8 KB
+    pyqt-5.9.2                 |   py36h05f1152_2         5.6 MB
+    ptyprocess-0.6.0           |           py36_0          23 KB
+    pathlib2-2.3.2             |           py36_0          32 KB
+    dask-core-0.20.2           |           py36_0         1.2 MB
+    python-libarchive-c-2.8    |           py36_6          20 KB
+    wrapt-1.10.11              |   py36h14c3975_2          45 KB
+    pyopenssl-18.0.0           |           py36_0          82 KB
+    ipython_genutils-0.2.0     |           py36_0          39 KB
+    babel-2.6.0                |           py36_0         5.7 MB
+    jupyter_client-5.2.3       |           py36_0         124 KB
+    sphinx-1.8.2               |           py36_0         1.9 MB
+    itsdangerous-1.1.0         |           py36_0          26 KB
+    distributed-1.24.2         |           py36_0         813 KB
+    psutil-5.4.8               |   py36h7b6447c_0         311 KB
+    backports-1.0              |           py36_1           3 KB
+    backcall-0.1.0             |           py36_0          19 KB
+    sortedcontainers-2.0.5     |           py36_0          43 KB
+    twisted-18.9.0             |   py36h7b6447c_0         4.9 MB
+    heapdict-1.0.0             |           py36_2           7 KB
+    tornado-5.1.1              |   py36h7b6447c_0         663 KB
+    backports.os-0.1.1         |           py36_0          15 KB
+    cycler-0.10.0              |           py36_0          13 KB
+    gevent-1.3.7               |   py36h7b6447c_1         1.9 MB
+    cython-0.29                |   py36he6710b0_0         2.3 MB
+    testpath-0.4.2             |           py36_0          91 KB
+    networkx-2.2               |           py36_1         2.0 MB
+    defusedxml-0.5.0           |           py36_1          29 KB
+    webencodings-0.5.1         |           py36_1          19 KB
+    pytest-4.0.0               |           py36_0         335 KB
+    ipywidgets-7.4.2           |           py36_0         151 KB
+    jupyter_console-6.0.0      |           py36_0          35 KB
+    mccabe-0.6.1               |           py36_1          14 KB
+    pycurl-7.43.0.2            |   py36hb7f436b_0          60 KB
+    contextlib2-0.5.5          |           py36_0          15 KB
+    kiwisolver-1.0.1           |   py36hf484d3e_0          83 KB
+    qtconsole-4.4.2            |           py36_0         157 KB
+    cytoolz-0.9.0.1            |   py36h14c3975_1         419 KB
+    et_xmlfile-1.0.1           |           py36_0          20 KB
+    service_identity-17.0.0    |   py36h28b3542_0          18 KB
+    anaconda-client-1.7.2      |           py36_0         141 KB
+    pyyaml-3.13                |   py36h14c3975_0         178 KB
+    snowballstemmer-1.2.1      |           py36_0          85 KB
+    pexpect-4.6.0              |           py36_0          77 KB
+    setuptools-40.6.2          |           py36_0         604 KB
+    tqdm-4.28.1                |   py36h28b3542_0          61 KB
+    pylint-2.1.1               |           py36_0         795 KB
+    conda-4.5.11               |           py36_0         1.0 MB
+    nbconvert-5.4.0            |           py36_1         416 KB
+    wheel-0.32.3               |           py36_0          35 KB
+    pytest-remotedata-0.3.1    |           py36_0          13 KB
+    imagesize-1.1.0            |           py36_0           9 KB
+    idna-2.7                   |           py36_0         132 KB
+    lxml-4.2.5                 |   py36hefd8a0e_0         1.6 MB
+    atomicwrites-1.2.1         |           py36_0          11 KB
+    pyodbc-4.0.24              |   py36he6710b0_0          66 KB
+    anaconda-navigator-1.9.2   |           py36_0         4.8 MB
+    toolz-0.9.0                |           py36_0          91 KB
+    py-1.7.0                   |           py36_0         138 KB
+    python-dateutil-2.7.5      |           py36_0         275 KB
+    attrs-18.2.0               |   py36h28b3542_0          50 KB
+    pyflakes-2.0.0             |           py36_0          88 KB
+    unicodecsv-0.14.1          |           py36_0          25 KB
+    ipykernel-5.1.0            |   py36h39e3cac_0         156 KB
+    cffi-1.11.5                |   py36he75722e_1         212 KB
+    prompt_toolkit-2.0.7       |           py36_0         482 KB
+    colorama-0.4.0             |           py36_0          24 KB
+    jupyter-tensorboard-0.1.6  |           py36_0          21 KB  p-vg
+    packaging-18.0             |           py36_0          33 KB
+    fastcache-1.0.2            |   py36h14c3975_2          30 KB
+    prometheus_client-0.4.2    |           py36_0          64 KB
+    pycrypto-2.6.1             |   py36h14c3975_9         465 KB
+    bitarray-0.8.3             |   py36h14c3975_0          55 KB
+    terminado-0.8.1            |           py36_1          21 KB
+    incremental-17.5.0         |           py36_0          25 KB
+    flask-cors-3.0.7           |           py36_0          21 KB
+    jupyter-1.0.0              |           py36_7           6 KB
+    anaconda-project-0.8.2     |           py36_0         478 KB
+    gmpy2-2.0.8                |   py36h10f8cd9_2         165 KB
+    multipledispatch-0.6.0     |           py36_0          21 KB
+    pyhamcrest-1.9.0           |           py36_2          47 KB
+    pytest-openfiles-0.3.0     |           py36_0           9 KB
+    msgpack-python-0.5.6       |   py36h6bb024c_1          99 KB
+    xlsxwriter-1.1.2           |           py36_0         213 KB
+    pysocks-1.6.8              |           py36_0          22 KB
+    widgetsnbextension-3.4.2   |           py36_0         1.7 MB
+    markupsafe-1.1.0           |   py36h7b6447c_0          26 KB
+    pkginfo-1.4.2              |           py36_1          39 KB
+    jupyterlab_launcher-0.13.1 |           py36_0          36 KB
+    cloudpickle-0.6.1          |           py36_0          27 KB
+    spyder-kernels-0.2.6       |           py36_0          69 KB
+    path.py-11.5.0             |           py36_0          55 KB
+    sip-4.19.8                 |   py36hf484d3e_0         290 KB
+    olefile-0.46               |           py36_0          48 KB
+    pygments-2.2.0             |           py36_0         1.3 MB
+    wcwidth-0.1.7              |           py36_0          25 KB
+    zope-1.0                   |           py36_1           3 KB
+    keyring-16.1.0             |           py36_0          49 KB
+    zstd-1.3.3                 |       h84994c4_0         840 KB
+    ruamel_yaml-0.15.46        |   py36h14c3975_0         245 KB
+    rope-0.11.0                |           py36_0         282 KB
+    click-7.0                  |           py36_0         118 KB
+    pyzmq-17.1.2               |   py36h14c3975_0         454 KB
+    greenlet-0.4.15            |   py36h7b6447c_0          20 KB
+    sphinxcontrib-1.0          |           py36_1           3 KB
+    entrypoints-0.2.3          |           py36_2           9 KB
+    jupyter_core-4.4.0         |           py36_0          63 KB
+    mistune-0.8.4              |   py36h7b6447c_0          54 KB
+    lz4-c-1.8.1.2              |       h14c3975_0         158 KB
+    pep8-1.7.1                 |           py36_0          52 KB
+    sortedcollections-1.0.1    |           py36_0          15 KB
+    urllib3-1.23               |           py36_0         152 KB
+    appdirs-1.4.3              |   py36h28b3542_0          16 KB
+    send2trash-1.5.0           |           py36_0          16 KB
+    navigator-updater-0.2.1    |           py36_0         1.2 MB
+    alabaster-0.7.12           |           py36_0          17 KB
+    sphinxcontrib-websupport-1.1.0|           py36_1          36 KB
+    qtpy-1.5.2                 |           py36_0          54 KB
+    constantly-15.1.0          |   py36h28b3542_0          13 KB
+    cryptography-2.3.1         |   py36hc365091_0         585 KB
+    isort-4.3.4                |           py36_0          58 KB
+    chardet-3.0.4              |           py36_1         189 KB
+    astroid-2.0.4              |           py36_0         247 KB
+    backports.shutil_get_terminal_size-1.0.0|           py36_2           8 KB
+    spyder-3.3.1               |           py36_1         2.6 MB
+    python-3.6.6               |       hc3d631a_0        29.4 MB
+    pytz-2018.7                |           py36_0         250 KB
+    html5lib-1.0.1             |           py36_0         184 KB
+    openpyxl-2.5.9             |           py36_0         338 KB
+    jinja2-2.10                |           py36_0         184 KB
+    jedi-0.13.1                |           py36_0         229 KB
+    conda-build-3.16.3         |           py36_0         476 KB
+    docutils-0.14              |           py36_0         689 KB
+    xlwt-1.3.0                 |           py36_0         163 KB
+    singledispatch-3.4.0.3     |           py36_0          15 KB
+    importlib_metadata-0.6     |           py36_0          22 KB
+    zope.interface-4.6.0       |   py36h7b6447c_0         207 KB
+    asn1crypto-0.24.0          |           py36_0         155 KB
+    jupyterlab-0.35.3          |           py36_0        10.6 MB
+    llvmlite-0.25.0            |   py36hd408876_0        15.4 MB
+    jdcal-1.4                  |           py36_0          11 KB
+    lazy-object-proxy-1.3.1    |   py36h14c3975_2          30 KB
+    parso-0.3.1                |           py36_0         114 KB
+    clyent-1.2.2               |           py36_1          18 KB
+    mpmath-1.0.0               |           py36_2         892 KB
+    werkzeug-0.14.1            |           py36_0         423 KB
+    filelock-3.0.10            |           py36_0          13 KB
+    simplegeneric-0.8.1        |           py36_2           9 KB
+    partd-0.3.9                |           py36_0          32 KB
+    pyasn1-modules-0.2.2       |           py36_0          86 KB
+    pluggy-0.8.0               |           py36_0          28 KB
+    secretstorage-3.1.0        |           py36_0          23 KB
+    more-itertools-4.3.0       |           py36_0          83 KB
+    pyparsing-2.3.0            |           py36_0         101 KB
+    numpydoc-0.8.0             |           py36_0          42 KB
+    pycodestyle-2.4.0          |           py36_0          59 KB
+    beautifulsoup4-4.6.3       |           py36_0         138 KB
+    qtawesome-0.5.3            |           py36_0         599 KB
+    nose-1.3.7                 |           py36_2         214 KB
+    jsonschema-2.6.0           |           py36_0          62 KB
+    pandocfilters-1.4.2        |           py36_1          13 KB
+    requests-2.20.1            |           py36_0          85 KB
+    _ipyw_jlab_nb_ext_conf-0.1.0|           py36_0           4 KB
+    decorator-4.3.0            |           py36_0          15 KB
+    pickleshare-0.7.5          |           py36_0          13 KB
+    pyasn1-0.4.4               |   py36h28b3542_0         101 KB
+    nltk-3.3.0                 |           py36_0         2.0 MB
+    ipython-7.1.1              |   py36h39e3cac_0         1.1 MB
+    nbformat-4.4.0             |           py36_0         141 KB
+    jeepney-0.4                |           py36_0          37 KB
+    six-1.11.0                 |           py36_1          21 KB
+    bleach-3.0.2               |           py36_0         220 KB
+    zict-0.1.3                 |           py36_0          18 KB
+    sympy-1.3                  |           py36_0         9.5 MB
+    pillow-5.3.0               |   py36h34e0f95_0         599 KB
+    pycparser-2.19             |           py36_0         174 KB
+    libarchive-3.3.3           |       h7d0bbab_1         1.5 MB
+    sqlalchemy-1.2.14          |   py36h7b6447c_0         1.7 MB
+    notebook-5.7.2             |           py36_0         7.2 MB
+    typed-ast-1.1.0            |   py36h14c3975_0         196 KB
+    traitlets-4.3.2            |           py36_0         133 KB
+    automat-0.7.0              |           py36_0          52 KB
+    xlrd-1.1.0                 |           py36_1         194 KB
+    tblib-1.3.2                |           py36_0          16 KB
+    glob2-0.6                  |           py36_1          17 KB
+    ply-3.11                   |           py36_0          79 KB
+    hyperlink-18.0.0           |           py36_0          62 KB
+    jupyterlab_server-0.2.0    |           py36_0          40 KB
+    certifi-2018.10.15         |           py36_0         139 KB
+    pip-18.1                   |           py36_0         1.8 MB
+    flask-1.0.2                |           py36_1         119 KB
+    pycosat-0.6.3              |   py36h14c3975_0         104 KB
+    boto-2.49.0                |           py36_0         1.5 MB
+    ------------------------------------------------------------
+                                           Total:       143.2 MB
+
+The following NEW packages will be INSTALLED:
+
+    backports.os:                       0.1.1-py36_0                
+    importlib_metadata:                 0.6-py36_0                  
+    jupyter-tensorboard:                0.1.6-py36_0            p-vg
+    jupyterlab_server:                  0.2.0-py36_0                
+    libarchive:                         3.3.3-h7d0bbab_1            
+    lz4-c:                              1.8.1.2-h14c3975_0          
+    pyhamcrest:                         1.9.0-py36_2                
+    python-libarchive-c:                2.8-py36_6                  
+    typed-ast:                          1.1.0-py36h14c3975_0        
+    zstd:                               1.3.3-h84994c4_0            
+
+The following packages will be UPDATED:
+
+    _ipyw_jlab_nb_ext_conf:             0.1.0-py37_0                 --> 0.1.0-py36_0           
+    alabaster:                          0.7.11-py37_0                --> 0.7.12-py36_0          
+    anaconda-client:                    1.7.2-py37_0                 --> 1.7.2-py36_0           
+    anaconda-navigator:                 1.9.2-py37_0                 --> 1.9.2-py36_0           
+    anaconda-project:                   0.8.2-py37_0                 --> 0.8.2-py36_0           
+    appdirs:                            1.4.3-py37h28b3542_0         --> 1.4.3-py36h28b3542_0   
+    asn1crypto:                         0.24.0-py37_0                --> 0.24.0-py36_0          
+    astroid:                            2.0.4-py37_0                 --> 2.0.4-py36_0           
+    atomicwrites:                       1.2.1-py37_0                 --> 1.2.1-py36_0           
+    attrs:                              18.2.0-py37h28b3542_0        --> 18.2.0-py36h28b3542_0  
+    automat:                            0.7.0-py37_0                 --> 0.7.0-py36_0           
+    babel:                              2.6.0-py37_0                 --> 2.6.0-py36_0           
+    backcall:                           0.1.0-py37_0                 --> 0.1.0-py36_0           
+    backports:                          1.0-py37_1                   --> 1.0-py36_1             
+    backports.shutil_get_terminal_size: 1.0.0-py37_2                 --> 1.0.0-py36_2           
+    beautifulsoup4:                     4.6.3-py37_0                 --> 4.6.3-py36_0           
+    bitarray:                           0.8.3-py37h14c3975_0         --> 0.8.3-py36h14c3975_0   
+    bleach:                             2.1.4-py37_0                 --> 3.0.2-py36_0           
+    boto:                               2.49.0-py37_0                --> 2.49.0-py36_0          
+    certifi:                            2018.8.24-py37_1             --> 2018.10.15-py36_0      
+    cffi:                               1.11.5-py37he75722e_1        --> 1.11.5-py36he75722e_1  
+    chardet:                            3.0.4-py37_1                 --> 3.0.4-py36_1           
+    click:                              6.7-py37_0                   --> 7.0-py36_0             
+    cloudpickle:                        0.5.5-py37_0                 --> 0.6.1-py36_0           
+    clyent:                             1.2.2-py37_1                 --> 1.2.2-py36_1           
+    colorama:                           0.3.9-py37_0                 --> 0.4.0-py36_0           
+    conda:                              4.5.11-py37_0                --> 4.5.11-py36_0          
+    conda-build:                        3.15.1-py37_0                --> 3.16.3-py36_0          
+    constantly:                         15.1.0-py37h28b3542_0        --> 15.1.0-py36h28b3542_0  
+    contextlib2:                        0.5.5-py37_0                 --> 0.5.5-py36_0           
+    cryptography:                       2.3.1-py37hc365091_0         --> 2.3.1-py36hc365091_0   
+    cycler:                             0.10.0-py37_0                --> 0.10.0-py36_0          
+    cython:                             0.28.5-py37hf484d3e_0        --> 0.29-py36he6710b0_0    
+    cytoolz:                            0.9.0.1-py37h14c3975_1       --> 0.9.0.1-py36h14c3975_1 
+    dask-core:                          0.19.1-py37_0                --> 0.20.2-py36_0          
+    decorator:                          4.3.0-py37_0                 --> 4.3.0-py36_0           
+    defusedxml:                         0.5.0-py37_1                 --> 0.5.0-py36_1           
+    distributed:                        1.23.1-py37_0                --> 1.24.2-py36_0          
+    docutils:                           0.14-py37_0                  --> 0.14-py36_0            
+    entrypoints:                        0.2.3-py37_2                 --> 0.2.3-py36_2           
+    et_xmlfile:                         1.0.1-py37_0                 --> 1.0.1-py36_0           
+    fastcache:                          1.0.2-py37h14c3975_2         --> 1.0.2-py36h14c3975_2   
+    filelock:                           3.0.8-py37_0                 --> 3.0.10-py36_0          
+    flask:                              1.0.2-py37_1                 --> 1.0.2-py36_1           
+    flask-cors:                         3.0.6-py37_0                 --> 3.0.7-py36_0           
+    gevent:                             1.3.6-py37h7b6447c_0         --> 1.3.7-py36h7b6447c_1   
+    glob2:                              0.6-py37_0                   --> 0.6-py36_1             
+    gmpy2:                              2.0.8-py37h10f8cd9_2         --> 2.0.8-py36h10f8cd9_2   
+    greenlet:                           0.4.15-py37h7b6447c_0        --> 0.4.15-py36h7b6447c_0  
+    heapdict:                           1.0.0-py37_2                 --> 1.0.0-py36_2           
+    html5lib:                           1.0.1-py37_0                 --> 1.0.1-py36_0           
+    hyperlink:                          18.0.0-py37_0                --> 18.0.0-py36_0          
+    idna:                               2.7-py37_0                   --> 2.7-py36_0             
+    imagesize:                          1.1.0-py37_0                 --> 1.1.0-py36_0           
+    incremental:                        17.5.0-py37_0                --> 17.5.0-py36_0          
+    ipykernel:                          4.9.0-py37_1                 --> 5.1.0-py36h39e3cac_0   
+    ipython:                            6.5.0-py37_0                 --> 7.1.1-py36h39e3cac_0   
+    ipython_genutils:                   0.2.0-py37_0                 --> 0.2.0-py36_0           
+    ipywidgets:                         7.4.1-py37_0                 --> 7.4.2-py36_0           
+    isort:                              4.3.4-py37_0                 --> 4.3.4-py36_0           
+    itsdangerous:                       0.24-py37_1                  --> 1.1.0-py36_0           
+    jdcal:                              1.4-py37_0                   --> 1.4-py36_0             
+    jedi:                               0.12.1-py37_0                --> 0.13.1-py36_0          
+    jeepney:                            0.3.1-py37_0                 --> 0.4-py36_0             
+    jinja2:                             2.10-py37_0                  --> 2.10-py36_0            
+    jsonschema:                         2.6.0-py37_0                 --> 2.6.0-py36_0           
+    jupyter:                            1.0.0-py37_7                 --> 1.0.0-py36_7           
+    jupyter_client:                     5.2.3-py37_0                 --> 5.2.3-py36_0           
+    jupyter_console:                    5.2.0-py37_1                 --> 6.0.0-py36_0           
+    jupyter_core:                       4.4.0-py37_0                 --> 4.4.0-py36_0           
+    jupyterlab:                         0.34.9-py37_0                --> 0.35.3-py36_0          
+    jupyterlab_launcher:                0.13.1-py37_0                --> 0.13.1-py36_0          
+    keyring:                            13.2.1-py37_0                --> 16.1.0-py36_0          
+    kiwisolver:                         1.0.1-py37hf484d3e_0         --> 1.0.1-py36hf484d3e_0   
+    lazy-object-proxy:                  1.3.1-py37h14c3975_2         --> 1.3.1-py36h14c3975_2   
+    llvmlite:                           0.24.0-py37hdbcaa40_0        --> 0.25.0-py36hd408876_0  
+    locket:                             0.2.0-py37_1                 --> 0.2.0-py36_1           
+    lxml:                               4.2.5-py37hefd8a0e_0         --> 4.2.5-py36hefd8a0e_0   
+    markupsafe:                         1.0-py37h14c3975_1           --> 1.1.0-py36h7b6447c_0   
+    mccabe:                             0.6.1-py37_1                 --> 0.6.1-py36_1           
+    mistune:                            0.8.3-py37h14c3975_1         --> 0.8.4-py36h7b6447c_0   
+    more-itertools:                     4.3.0-py37_0                 --> 4.3.0-py36_0           
+    mpmath:                             1.0.0-py37_2                 --> 1.0.0-py36_2           
+    msgpack-python:                     0.5.6-py37h6bb024c_1         --> 0.5.6-py36h6bb024c_1   
+    multipledispatch:                   0.6.0-py37_0                 --> 0.6.0-py36_0           
+    navigator-updater:                  0.2.1-py37_0                 --> 0.2.1-py36_0           
+    nbconvert:                          5.4.0-py37_1                 --> 5.4.0-py36_1           
+    nbformat:                           4.4.0-py37_0                 --> 4.4.0-py36_0           
+    networkx:                           2.1-py37_0                   --> 2.2-py36_1             
+    nltk:                               3.3.0-py37_0                 --> 3.3.0-py36_0           
+    nose:                               1.3.7-py37_2                 --> 1.3.7-py36_2           
+    notebook:                           5.6.0-py37_0                 --> 5.7.2-py36_0           
+    numpydoc:                           0.8.0-py37_0                 --> 0.8.0-py36_0           
+    olefile:                            0.46-py37_0                  --> 0.46-py36_0            
+    openpyxl:                           2.5.6-py37_0                 --> 2.5.9-py36_0           
+    packaging:                          17.1-py37_0                  --> 18.0-py36_0            
+    pandocfilters:                      1.4.2-py37_1                 --> 1.4.2-py36_1           
+    parso:                              0.3.1-py37_0                 --> 0.3.1-py36_0           
+    partd:                              0.3.8-py37_0                 --> 0.3.9-py36_0           
+    path.py:                            11.1.0-py37_0                --> 11.5.0-py36_0          
+    pathlib2:                           2.3.2-py37_0                 --> 2.3.2-py36_0           
+    pep8:                               1.7.1-py37_0                 --> 1.7.1-py36_0           
+    pexpect:                            4.6.0-py37_0                 --> 4.6.0-py36_0           
+    pickleshare:                        0.7.4-py37_0                 --> 0.7.5-py36_0           
+    pillow:                             5.2.0-py37heded4f4_0         --> 5.3.0-py36h34e0f95_0   
+    pip:                                10.0.1-py37_0                --> 18.1-py36_0            
+    pkginfo:                            1.4.2-py37_1                 --> 1.4.2-py36_1           
+    pluggy:                             0.7.1-py37h28b3542_0         --> 0.8.0-py36_0           
+    ply:                                3.11-py37_0                  --> 3.11-py36_0            
+    prometheus_client:                  0.3.1-py37h28b3542_0         --> 0.4.2-py36_0           
+    prompt_toolkit:                     1.0.15-py37_0                --> 2.0.7-py36_0           
+    psutil:                             5.4.7-py37h14c3975_0         --> 5.4.8-py36h7b6447c_0   
+    ptyprocess:                         0.6.0-py37_0                 --> 0.6.0-py36_0           
+    py:                                 1.6.0-py37_0                 --> 1.7.0-py36_0           
+    pyasn1:                             0.4.4-py37h28b3542_0         --> 0.4.4-py36h28b3542_0   
+    pyasn1-modules:                     0.2.2-py37_0                 --> 0.2.2-py36_0           
+    pycodestyle:                        2.4.0-py37_0                 --> 2.4.0-py36_0           
+    pycosat:                            0.6.3-py37h14c3975_0         --> 0.6.3-py36h14c3975_0   
+    pycparser:                          2.18-py37_1                  --> 2.19-py36_0            
+    pycrypto:                           2.6.1-py37h14c3975_9         --> 2.6.1-py36h14c3975_9   
+    pycurl:                             7.43.0.2-py37hb7f436b_0      --> 7.43.0.2-py36hb7f436b_0
+    pyflakes:                           2.0.0-py37_0                 --> 2.0.0-py36_0           
+    pygments:                           2.2.0-py37_0                 --> 2.2.0-py36_0           
+    pylint:                             2.1.1-py37_0                 --> 2.1.1-py36_0           
+    pyodbc:                             4.0.24-py37he6710b0_0        --> 4.0.24-py36he6710b0_0  
+    pyopenssl:                          18.0.0-py37_0                --> 18.0.0-py36_0          
+    pyparsing:                          2.2.0-py37_1                 --> 2.3.0-py36_0           
+    pyqt:                               5.9.2-py37h05f1152_2         --> 5.9.2-py36h05f1152_2   
+    pysocks:                            1.6.8-py37_0                 --> 1.6.8-py36_0           
+    pytest:                             3.8.0-py37_0                 --> 4.0.0-py36_0           
+    pytest-openfiles:                   0.3.0-py37_0                 --> 0.3.0-py36_0           
+    pytest-remotedata:                  0.3.0-py37_0                 --> 0.3.1-py36_0           
+    python-dateutil:                    2.7.3-py37_0                 --> 2.7.5-py36_0           
+    pytz:                               2018.5-py37_0                --> 2018.7-py36_0          
+    pyyaml:                             3.13-py37h14c3975_0          --> 3.13-py36h14c3975_0    
+    pyzmq:                              17.1.2-py37h14c3975_0        --> 17.1.2-py36h14c3975_0  
+    qtawesome:                          0.4.4-py37_0                 --> 0.5.3-py36_0           
+    qtconsole:                          4.4.1-py37_0                 --> 4.4.2-py36_0           
+    qtpy:                               1.5.0-py37_0                 --> 1.5.2-py36_0           
+    requests:                           2.19.1-py37_0                --> 2.20.1-py36_0          
+    rope:                               0.11.0-py37_0                --> 0.11.0-py36_0          
+    ruamel_yaml:                        0.15.46-py37h14c3975_0       --> 0.15.46-py36h14c3975_0 
+    secretstorage:                      3.1.0-py37_0                 --> 3.1.0-py36_0           
+    send2trash:                         1.5.0-py37_0                 --> 1.5.0-py36_0           
+    service_identity:                   17.0.0-py37h28b3542_0        --> 17.0.0-py36h28b3542_0  
+    setuptools:                         40.2.0-py37_0                --> 40.6.2-py36_0          
+    simplegeneric:                      0.8.1-py37_2                 --> 0.8.1-py36_2           
+    singledispatch:                     3.4.0.3-py37_0               --> 3.4.0.3-py36_0         
+    sip:                                4.19.8-py37hf484d3e_0        --> 4.19.8-py36hf484d3e_0  
+    six:                                1.11.0-py37_1                --> 1.11.0-py36_1          
+    snowballstemmer:                    1.2.1-py37_0                 --> 1.2.1-py36_0           
+    sortedcollections:                  1.0.1-py37_0                 --> 1.0.1-py36_0           
+    sortedcontainers:                   2.0.5-py37_0                 --> 2.0.5-py36_0           
+    sphinx:                             1.7.9-py37_0                 --> 1.8.2-py36_0           
+    sphinxcontrib:                      1.0-py37_1                   --> 1.0-py36_1             
+    sphinxcontrib-websupport:           1.1.0-py37_1                 --> 1.1.0-py36_1           
+    spyder:                             3.3.1-py37_1                 --> 3.3.1-py36_1           
+    spyder-kernels:                     0.2.6-py37_0                 --> 0.2.6-py36_0           
+    sqlalchemy:                         1.2.11-py37h7b6447c_0        --> 1.2.14-py36h7b6447c_0  
+    sympy:                              1.2-py37_0                   --> 1.3-py36_0             
+    tblib:                              1.3.2-py37_0                 --> 1.3.2-py36_0           
+    terminado:                          0.8.1-py37_1                 --> 0.8.1-py36_1           
+    testpath:                           0.3.1-py37_0                 --> 0.4.2-py36_0           
+    toolz:                              0.9.0-py37_0                 --> 0.9.0-py36_0           
+    tornado:                            5.1-py37h14c3975_0           --> 5.1.1-py36h7b6447c_0   
+    tqdm:                               4.26.0-py37h28b3542_0        --> 4.28.1-py36h28b3542_0  
+    traitlets:                          4.3.2-py37_0                 --> 4.3.2-py36_0           
+    twisted:                            18.7.0-py37h14c3975_1        --> 18.9.0-py36h7b6447c_0  
+    unicodecsv:                         0.14.1-py37_0                --> 0.14.1-py36_0          
+    urllib3:                            1.23-py37_0                  --> 1.23-py36_0            
+    wcwidth:                            0.1.7-py37_0                 --> 0.1.7-py36_0           
+    webencodings:                       0.5.1-py37_1                 --> 0.5.1-py36_1           
+    werkzeug:                           0.14.1-py37_0                --> 0.14.1-py36_0          
+    wheel:                              0.31.1-py37_0                --> 0.32.3-py36_0          
+    widgetsnbextension:                 3.4.1-py37_0                 --> 3.4.2-py36_0           
+    wrapt:                              1.10.11-py37h14c3975_2       --> 1.10.11-py36h14c3975_2 
+    xlrd:                               1.1.0-py37_1                 --> 1.1.0-py36_1           
+    xlsxwriter:                         1.1.0-py37_0                 --> 1.1.2-py36_0           
+    xlwt:                               1.3.0-py37_0                 --> 1.3.0-py36_0           
+    zict:                               0.1.3-py37_0                 --> 0.1.3-py36_0           
+    zope:                               1.0-py37_1                   --> 1.0-py36_1             
+    zope.interface:                     4.5.0-py37h14c3975_0         --> 4.6.0-py36h7b6447c_0   
+
+The following packages will be DOWNGRADED:
+
+    python:                             3.7.0-hc3d631a_0             --> 3.6.6-hc3d631a_0       
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+locket-0.2.0         | 8 KB      | ############################################################################## | 100% 
+pyqt-5.9.2           | 5.6 MB    | ############################################################################## | 100% 
+ptyprocess-0.6.0     | 23 KB     | ############################################################################## | 100% 
+pathlib2-2.3.2       | 32 KB     | ############################################################################## | 100% 
+dask-core-0.20.2     | 1.2 MB    | ############################################################################## | 100% 
+python-libarchive-c- | 20 KB     | ############################################################################## | 100% 
+wrapt-1.10.11        | 45 KB     | ############################################################################## | 100% 
+pyopenssl-18.0.0     | 82 KB     | ############################################################################## | 100% 
+ipython_genutils-0.2 | 39 KB     | ############################################################################## | 100% 
+babel-2.6.0          | 5.7 MB    | ############################################################################## | 100% 
+jupyter_client-5.2.3 | 124 KB    | ############################################################################## | 100% 
+sphinx-1.8.2         | 1.9 MB    | ############################################################################## | 100% 
+itsdangerous-1.1.0   | 26 KB     | ############################################################################## | 100% 
+distributed-1.24.2   | 813 KB    | ############################################################################## | 100% 
+psutil-5.4.8         | 311 KB    | ############################################################################## | 100% 
+backports-1.0        | 3 KB      | ############################################################################## | 100% 
+backcall-0.1.0       | 19 KB     | ############################################################################## | 100% 
+sortedcontainers-2.0 | 43 KB     | ############################################################################## | 100% 
+twisted-18.9.0       | 4.9 MB    | ############################################################################## | 100% 
+heapdict-1.0.0       | 7 KB      | ############################################################################## | 100% 
+tornado-5.1.1        | 663 KB    | ############################################################################## | 100% 
+backports.os-0.1.1   | 15 KB     | ############################################################################## | 100% 
+cycler-0.10.0        | 13 KB     | ############################################################################## | 100% 
+gevent-1.3.7         | 1.9 MB    | ############################################################################## | 100% 
+cython-0.29          | 2.3 MB    | ############################################################################## | 100% 
+testpath-0.4.2       | 91 KB     | ############################################################################## | 100% 
+networkx-2.2         | 2.0 MB    | ############################################################################## | 100% 
+defusedxml-0.5.0     | 29 KB     | ############################################################################## | 100% 
+webencodings-0.5.1   | 19 KB     | ############################################################################## | 100% 
+pytest-4.0.0         | 335 KB    | ############################################################################## | 100% 
+ipywidgets-7.4.2     | 151 KB    | ############################################################################## | 100% 
+jupyter_console-6.0. | 35 KB     | ############################################################################## | 100% 
+mccabe-0.6.1         | 14 KB     | ############################################################################## | 100% 
+pycurl-7.43.0.2      | 60 KB     | ############################################################################## | 100% 
+contextlib2-0.5.5    | 15 KB     | ############################################################################## | 100% 
+kiwisolver-1.0.1     | 83 KB     | ############################################################################## | 100% 
+qtconsole-4.4.2      | 157 KB    | ############################################################################## | 100% 
+cytoolz-0.9.0.1      | 419 KB    | ############################################################################## | 100% 
+et_xmlfile-1.0.1     | 20 KB     | ############################################################################## | 100% 
+service_identity-17. | 18 KB     | ############################################################################## | 100% 
+anaconda-client-1.7. | 141 KB    | ############################################################################## | 100% 
+pyyaml-3.13          | 178 KB    | ############################################################################## | 100% 
+snowballstemmer-1.2. | 85 KB     | ############################################################################## | 100% 
+pexpect-4.6.0        | 77 KB     | ############################################################################## | 100% 
+setuptools-40.6.2    | 604 KB    | ############################################################################## | 100% 
+tqdm-4.28.1          | 61 KB     | ############################################################################## | 100% 
+pylint-2.1.1         | 795 KB    | ############################################################################## | 100% 
+conda-4.5.11         | 1.0 MB    | ############################################################################## | 100% 
+nbconvert-5.4.0      | 416 KB    | ############################################################################## | 100% 
+wheel-0.32.3         | 35 KB     | ############################################################################## | 100% 
+pytest-remotedata-0. | 13 KB     | ############################################################################## | 100% 
+imagesize-1.1.0      | 9 KB      | ############################################################################## | 100% 
+idna-2.7             | 132 KB    | ############################################################################## | 100% 
+lxml-4.2.5           | 1.6 MB    | ############################################################################## | 100% 
+atomicwrites-1.2.1   | 11 KB     | ############################################################################## | 100% 
+pyodbc-4.0.24        | 66 KB     | ############################################################################## | 100% 
+anaconda-navigator-1 | 4.8 MB    | ############################################################################## | 100% 
+toolz-0.9.0          | 91 KB     | ############################################################################## | 100% 
+py-1.7.0             | 138 KB    | ############################################################################## | 100% 
+python-dateutil-2.7. | 275 KB    | ############################################################################## | 100% 
+attrs-18.2.0         | 50 KB     | ############################################################################## | 100% 
+pyflakes-2.0.0       | 88 KB     | ############################################################################## | 100% 
+unicodecsv-0.14.1    | 25 KB     | ############################################################################## | 100% 
+ipykernel-5.1.0      | 156 KB    | ############################################################################## | 100% 
+cffi-1.11.5          | 212 KB    | ############################################################################## | 100% 
+prompt_toolkit-2.0.7 | 482 KB    | ############################################################################## | 100% 
+colorama-0.4.0       | 24 KB     | ############################################################################## | 100% 
+jupyter-tensorboard- | 21 KB     | ############################################################################## | 100% 
+packaging-18.0       | 33 KB     | ############################################################################## | 100% 
+fastcache-1.0.2      | 30 KB     | ############################################################################## | 100% 
+prometheus_client-0. | 64 KB     | ############################################################################## | 100% 
+pycrypto-2.6.1       | 465 KB    | ############################################################################## | 100% 
+bitarray-0.8.3       | 55 KB     | ############################################################################## | 100% 
+terminado-0.8.1      | 21 KB     | ############################################################################## | 100% 
+incremental-17.5.0   | 25 KB     | ############################################################################## | 100% 
+flask-cors-3.0.7     | 21 KB     | ############################################################################## | 100% 
+jupyter-1.0.0        | 6 KB      | ############################################################################## | 100% 
+anaconda-project-0.8 | 478 KB    | ############################################################################## | 100% 
+gmpy2-2.0.8          | 165 KB    | ############################################################################## | 100% 
+multipledispatch-0.6 | 21 KB     | ############################################################################## | 100% 
+pyhamcrest-1.9.0     | 47 KB     | ############################################################################## | 100% 
+pytest-openfiles-0.3 | 9 KB      | ############################################################################## | 100% 
+msgpack-python-0.5.6 | 99 KB     | ############################################################################## | 100% 
+xlsxwriter-1.1.2     | 213 KB    | ############################################################################## | 100% 
+pysocks-1.6.8        | 22 KB     | ############################################################################## | 100% 
+widgetsnbextension-3 | 1.7 MB    | ############################################################################## | 100% 
+markupsafe-1.1.0     | 26 KB     | ############################################################################## | 100% 
+pkginfo-1.4.2        | 39 KB     | ############################################################################## | 100% 
+jupyterlab_launcher- | 36 KB     | ############################################################################## | 100% 
+cloudpickle-0.6.1    | 27 KB     | ############################################################################## | 100% 
+spyder-kernels-0.2.6 | 69 KB     | ############################################################################## | 100% 
+path.py-11.5.0       | 55 KB     | ############################################################################## | 100% 
+sip-4.19.8           | 290 KB    | ############################################################################## | 100% 
+olefile-0.46         | 48 KB     | ############################################################################## | 100% 
+pygments-2.2.0       | 1.3 MB    | ############################################################################## | 100% 
+wcwidth-0.1.7        | 25 KB     | ############################################################################## | 100% 
+zope-1.0             | 3 KB      | ############################################################################## | 100% 
+keyring-16.1.0       | 49 KB     | ############################################################################## | 100% 
+zstd-1.3.3           | 840 KB    | ############################################################################## | 100% 
+ruamel_yaml-0.15.46  | 245 KB    | ############################################################################## | 100% 
+rope-0.11.0          | 282 KB    | ############################################################################## | 100% 
+click-7.0            | 118 KB    | ############################################################################## | 100% 
+pyzmq-17.1.2         | 454 KB    | ############################################################################## | 100% 
+greenlet-0.4.15      | 20 KB     | ############################################################################## | 100% 
+sphinxcontrib-1.0    | 3 KB      | ############################################################################## | 100% 
+entrypoints-0.2.3    | 9 KB      | ############################################################################## | 100% 
+jupyter_core-4.4.0   | 63 KB     | ############################################################################## | 100% 
+mistune-0.8.4        | 54 KB     | ############################################################################## | 100% 
+lz4-c-1.8.1.2        | 158 KB    | ############################################################################## | 100% 
+pep8-1.7.1           | 52 KB     | ############################################################################## | 100% 
+sortedcollections-1. | 15 KB     | ############################################################################## | 100% 
+urllib3-1.23         | 152 KB    | ############################################################################## | 100% 
+appdirs-1.4.3        | 16 KB     | ############################################################################## | 100% 
+send2trash-1.5.0     | 16 KB     | ############################################################################## | 100% 
+navigator-updater-0. | 1.2 MB    | ############################################################################## | 100% 
+alabaster-0.7.12     | 17 KB     | ############################################################################## | 100% 
+sphinxcontrib-websup | 36 KB     | ############################################################################## | 100% 
+qtpy-1.5.2           | 54 KB     | ############################################################################## | 100% 
+constantly-15.1.0    | 13 KB     | ############################################################################## | 100% 
+cryptography-2.3.1   | 585 KB    | ############################################################################## | 100% 
+isort-4.3.4          | 58 KB     | ############################################################################## | 100% 
+chardet-3.0.4        | 189 KB    | ############################################################################## | 100% 
+astroid-2.0.4        | 247 KB    | ############################################################################## | 100% 
+backports.shutil_get | 8 KB      | ############################################################################## | 100% 
+spyder-3.3.1         | 2.6 MB    | ############################################################################## | 100% 
+python-3.6.6         | 29.4 MB   | ############################################################################## | 100% 
+pytz-2018.7          | 250 KB    | ############################################################################## | 100% 
+html5lib-1.0.1       | 184 KB    | ############################################################################## | 100% 
+openpyxl-2.5.9       | 338 KB    | ############################################################################## | 100% 
+jinja2-2.10          | 184 KB    | ############################################################################## | 100% 
+jedi-0.13.1          | 229 KB    | ############################################################################## | 100% 
+conda-build-3.16.3   | 476 KB    | ############################################################################## | 100% 
+docutils-0.14        | 689 KB    | ############################################################################## | 100% 
+xlwt-1.3.0           | 163 KB    | ############################################################################## | 100% 
+singledispatch-3.4.0 | 15 KB     | ############################################################################## | 100% 
+importlib_metadata-0 | 22 KB     | ############################################################################## | 100% 
+zope.interface-4.6.0 | 207 KB    | ############################################################################## | 100% 
+asn1crypto-0.24.0    | 155 KB    | ############################################################################## | 100% 
+jupyterlab-0.35.3    | 10.6 MB   | ############################################################################## | 100% 
+llvmlite-0.25.0      | 15.4 MB   | ############################################################################## | 100% 
+jdcal-1.4            | 11 KB     | ############################################################################## | 100% 
+lazy-object-proxy-1. | 30 KB     | ############################################################################## | 100% 
+parso-0.3.1          | 114 KB    | ############################################################################## | 100% 
+clyent-1.2.2         | 18 KB     | ############################################################################## | 100% 
+mpmath-1.0.0         | 892 KB    | ############################################################################## | 100% 
+werkzeug-0.14.1      | 423 KB    | ############################################################################## | 100% 
+filelock-3.0.10      | 13 KB     | ############################################################################## | 100% 
+simplegeneric-0.8.1  | 9 KB      | ############################################################################## | 100% 
+partd-0.3.9          | 32 KB     | ############################################################################## | 100% 
+pyasn1-modules-0.2.2 | 86 KB     | ############################################################################## | 100% 
+pluggy-0.8.0         | 28 KB     | ############################################################################## | 100% 
+secretstorage-3.1.0  | 23 KB     | ############################################################################## | 100% 
+more-itertools-4.3.0 | 83 KB     | ############################################################################## | 100% 
+pyparsing-2.3.0      | 101 KB    | ############################################################################## | 100% 
+numpydoc-0.8.0       | 42 KB     | ############################################################################## | 100% 
+pycodestyle-2.4.0    | 59 KB     | ############################################################################## | 100% 
+beautifulsoup4-4.6.3 | 138 KB    | ############################################################################## | 100% 
+qtawesome-0.5.3      | 599 KB    | ############################################################################## | 100% 
+nose-1.3.7           | 214 KB    | ############################################################################## | 100% 
+jsonschema-2.6.0     | 62 KB     | ############################################################################## | 100% 
+pandocfilters-1.4.2  | 13 KB     | ############################################################################## | 100% 
+requests-2.20.1      | 85 KB     | ############################################################################## | 100% 
+_ipyw_jlab_nb_ext_co | 4 KB      | ############################################################################## | 100% 
+decorator-4.3.0      | 15 KB     | ############################################################################## | 100% 
+pickleshare-0.7.5    | 13 KB     | ############################################################################## | 100% 
+pyasn1-0.4.4         | 101 KB    | ############################################################################## | 100% 
+nltk-3.3.0           | 2.0 MB    | ############################################################################## | 100% 
+ipython-7.1.1        | 1.1 MB    | ############################################################################## | 100% 
+nbformat-4.4.0       | 141 KB    | ############################################################################## | 100% 
+jeepney-0.4          | 37 KB     | ############################################################################## | 100% 
+six-1.11.0           | 21 KB     | ############################################################################## | 100% 
+bleach-3.0.2         | 220 KB    | ############################################################################## | 100% 
+zict-0.1.3           | 18 KB     | ############################################################################## | 100% 
+sympy-1.3            | 9.5 MB    | ############################################################################## | 100% 
+pillow-5.3.0         | 599 KB    | ############################################################################## | 100% 
+pycparser-2.19       | 174 KB    | ############################################################################## | 100% 
+libarchive-3.3.3     | 1.5 MB    | ############################################################################## | 100% 
+sqlalchemy-1.2.14    | 1.7 MB    | ############################################################################## | 100% 
+notebook-5.7.2       | 7.2 MB    | ############################################################################## | 100% 
+typed-ast-1.1.0      | 196 KB    | ############################################################################## | 100% 
+traitlets-4.3.2      | 133 KB    | ############################################################################## | 100% 
+automat-0.7.0        | 52 KB     | ############################################################################## | 100% 
+xlrd-1.1.0           | 194 KB    | ############################################################################## | 100% 
+tblib-1.3.2          | 16 KB     | ############################################################################## | 100% 
+glob2-0.6            | 17 KB     | ############################################################################## | 100% 
+ply-3.11             | 79 KB     | ############################################################################## | 100% 
+hyperlink-18.0.0     | 62 KB     | ############################################################################## | 100% 
+jupyterlab_server-0. | 40 KB     | ############################################################################## | 100% 
+certifi-2018.10.15   | 139 KB    | ############################################################################## | 100% 
+pip-18.1             | 1.8 MB    | ############################################################################## | 100% 
+flask-1.0.2          | 119 KB    | ############################################################################## | 100% 
+pycosat-0.6.3        | 104 KB    | ############################################################################## | 100% 
+boto-2.49.0          | 1.5 MB    | ############################################################################## | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ jupyter-notebook --no-browser --port=7000
+[I 04:09:17.574 NotebookApp] import tensorboard error, check tensorflow install
+[I 04:09:17.574 NotebookApp] jupyter_tensorboard extension loaded.
+[I 04:09:17.602 NotebookApp] JupyterLab extension loaded from /home/Sajana/anaconda3/lib/python3.6/site-packages/jupyterlab
+[I 04:09:17.603 NotebookApp] JupyterLab application directory is /home/Sajana/anaconda3/share/jupyter/lab
+[I 04:09:17.604 NotebookApp] Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+[I 04:09:17.604 NotebookApp] The Jupyter Notebook is running at:
+[I 04:09:17.604 NotebookApp] http://localhost:7000/?token=68213ac3cbccd670436ea915d1024c25799e3a33b500cf6e
+[I 04:09:17.604 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:09:17.605 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:7000/?token=68213ac3cbccd670436ea915d1024c25799e3a33b500cf6e
+^C[I 04:09:33.397 NotebookApp] interrupted
+Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+0 active kernels
+The Jupyter Notebook is running at:
+http://localhost:7000/?token=68213ac3cbccd670436ea915d1024c25799e3a33b500cf6e
+Shutdown this notebook server (y/[n])? y
+[C 04:09:34.724 NotebookApp] Shutdown confirmed
+[I 04:09:34.725 NotebookApp] Shutting down 0 kernels
+(base) Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ conda install -c conda-forge tensorflow
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/Sajana/anaconda3
+
+  added / updated specs: 
+    - tensorflow
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    openssl-1.0.2p             |       h470a237_1         3.1 MB  conda-forge
+    numpy-1.15.4               |   py36h1d66e8a_0          35 KB
+    tensorboard-1.10.0         |           py36_0         3.3 MB  conda-forge
+    tensorflow-1.10.0          |           py36_0        50.4 MB  conda-forge
+    numpy-base-1.15.4          |   py36h81de0dd_0         4.2 MB
+    markdown-2.6.11            |             py_0          56 KB  conda-forge
+    absl-py-0.6.1              |        py36_1000         151 KB  conda-forge
+    grpcio-1.16.0              |   py36hd60e7a3_0         4.9 MB  conda-forge
+    gast-0.2.0                 |             py_0           9 KB  conda-forge
+    mkl-2018.0.3               |                1       198.7 MB
+    astor-0.7.1                |             py_0          22 KB  conda-forge
+    libprotobuf-3.6.1          |       hd28b015_0         4.0 MB  conda-forge
+    certifi-2018.10.15         |        py36_1000         138 KB  conda-forge
+    conda-4.5.11               |        py36_1000         651 KB  conda-forge
+    mkl_fft-1.0.6              |           py36_0         586 KB  conda-forge
+    mkl_random-1.0.2           |           py36_0         1.3 MB  conda-forge
+    ca-certificates-2018.10.15 |       ha4d7672_0         135 KB  conda-forge
+    termcolor-1.1.0            |             py_2           6 KB  conda-forge
+    protobuf-3.6.1             |   py36hfc679d8_1         1.6 MB  conda-forge
+    c-ares-1.15.0              |       h470a237_1          91 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       273.4 MB
+
+The following NEW packages will be INSTALLED:
+
+    absl-py:         0.6.1-py36_1000       conda-forge
+    astor:           0.7.1-py_0            conda-forge
+    c-ares:          1.15.0-h470a237_1     conda-forge
+    gast:            0.2.0-py_0            conda-forge
+    grpcio:          1.16.0-py36hd60e7a3_0 conda-forge
+    libprotobuf:     3.6.1-hd28b015_0      conda-forge
+    markdown:        2.6.11-py_0           conda-forge
+    protobuf:        3.6.1-py36hfc679d8_1  conda-forge
+    tensorboard:     1.10.0-py36_0         conda-forge
+    tensorflow:      1.10.0-py36_0         conda-forge
+    termcolor:       1.1.0-py_2            conda-forge
+
+The following packages will be UPDATED:
+
+    ca-certificates: 2018.03.07-0                      --> 2018.10.15-ha4d7672_0 conda-forge
+    certifi:         2018.10.15-py36_0                 --> 2018.10.15-py36_1000  conda-forge
+    conda:           4.5.11-py36_0                     --> 4.5.11-py36_1000      conda-forge
+    mkl_fft:         1.0.4-py37h4414c95_1              --> 1.0.6-py36_0          conda-forge
+    mkl_random:      1.0.1-py37h4414c95_1              --> 1.0.2-py36_0          conda-forge
+    numpy:           1.15.1-py37h1d66e8a_0             --> 1.15.4-py36h1d66e8a_0            
+    numpy-base:      1.15.1-py37h81de0dd_0             --> 1.15.4-py36h81de0dd_0            
+    openssl:         1.0.2p-h14c3975_0                 --> 1.0.2p-h470a237_1     conda-forge
+
+The following packages will be DOWNGRADED:
+
+    mkl:             2019.0-118                        --> 2018.0.3-1                       
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+openssl-1.0.2p       | 3.1 MB    | ############################################################################## | 100% 
+numpy-1.15.4         | 35 KB     | ############################################################################## | 100% 
+tensorboard-1.10.0   | 3.3 MB    | ############################################################################## | 100% 
+tensorflow-1.10.0    | 50.4 MB   | ############################################################################## | 100% 
+numpy-base-1.15.4    | 4.2 MB    | ############################################################################## | 100% 
+markdown-2.6.11      | 56 KB     | ############################################################################## | 100% 
+absl-py-0.6.1        | 151 KB    | ############################################################################## | 100% 
+grpcio-1.16.0        | 4.9 MB    | ############################################################################## | 100% 
+gast-0.2.0           | 9 KB      | ############################################################################## | 100% 
+mkl-2018.0.3         | 198.7 MB  | ############################################################################## | 100% 
+astor-0.7.1          | 22 KB     | ############################################################################## | 100% 
+libprotobuf-3.6.1    | 4.0 MB    | ############################################################################## | 100% 
+certifi-2018.10.15   | 138 KB    | ############################################################################## | 100% 
+conda-4.5.11         | 651 KB    | ############################################################################## | 100% 
+mkl_fft-1.0.6        | 586 KB    | ############################################################################## | 100% 
+mkl_random-1.0.2     | 1.3 MB    | ############################################################################## | 100% 
+ca-certificates-2018 | 135 KB    | ############################################################################## | 100% 
+termcolor-1.1.0      | 6 KB      | ############################################################################## | 100% 
+protobuf-3.6.1       | 1.6 MB    | ############################################################################## | 100% 
+c-ares-1.15.0        | 91 KB     | ############################################################################## | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ jupyter-notebook --no-browser --port=7000
+[W 04:14:59.858 NotebookApp] Error loading server extension jupyter_tensorboard
+    Traceback (most recent call last):
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/notebook/notebookapp.py", line 1576, in init_server_extensions
+        func(self)
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/jupyter_tensorboard/handlers.py", line 21, in load_jupyter_server_extension
+        from .tensorboard_manager import manager
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/jupyter_tensorboard/tensorboard_manager.py", line 18, in <module>
+        get_plugins = default.get_plugins
+    AttributeError: module 'tensorboard.default' has no attribute 'get_plugins'
+[I 04:14:59.890 NotebookApp] JupyterLab extension loaded from /home/Sajana/anaconda3/lib/python3.6/site-packages/jupyterlab
+[I 04:14:59.890 NotebookApp] JupyterLab application directory is /home/Sajana/anaconda3/share/jupyter/lab
+[I 04:14:59.892 NotebookApp] Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+[I 04:14:59.892 NotebookApp] The Jupyter Notebook is running at:
+[I 04:14:59.892 NotebookApp] http://localhost:7000/?token=89711ab2bbb6203c3e7a95d4b1ae67edf23a66110713dcf3
+[I 04:14:59.892 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:14:59.892 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:7000/?token=89711ab2bbb6203c3e7a95d4b1ae67edf23a66110713dcf3
+^C[I 04:15:14.404 NotebookApp] interrupted
+Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+0 active kernels
+The Jupyter Notebook is running at:
+http://localhost:7000/?token=89711ab2bbb6203c3e7a95d4b1ae67edf23a66110713dcf3
+Shutdown this notebook server (y/[n])? y
+[C 04:15:15.849 NotebookApp] Shutdown confirmed
+[I 04:15:15.850 NotebookApp] Shutting down 0 kernels
+(base) Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ jupyter notebook --no-browser --port=7000
+[W 04:15:23.194 NotebookApp] Error loading server extension jupyter_tensorboard
+    Traceback (most recent call last):
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/notebook/notebookapp.py", line 1576, in init_server_extensions
+        func(self)
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/jupyter_tensorboard/handlers.py", line 21, in load_jupyter_server_extension
+        from .tensorboard_manager import manager
+      File "/home/Sajana/anaconda3/lib/python3.6/site-packages/jupyter_tensorboard/tensorboard_manager.py", line 18, in <module>
+        get_plugins = default.get_plugins
+    AttributeError: module 'tensorboard.default' has no attribute 'get_plugins'
+[I 04:15:23.226 NotebookApp] JupyterLab extension loaded from /home/Sajana/anaconda3/lib/python3.6/site-packages/jupyterlab
+[I 04:15:23.226 NotebookApp] JupyterLab application directory is /home/Sajana/anaconda3/share/jupyter/lab
+[I 04:15:23.228 NotebookApp] Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+[I 04:15:23.228 NotebookApp] The Jupyter Notebook is running at:
+[I 04:15:23.228 NotebookApp] http://localhost:7000/?token=cf18051b226baf94865f4ecb55b4fd10b87e38380939e075
+[I 04:15:23.228 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:15:23.228 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:7000/?token=cf18051b226baf94865f4ecb55b4fd10b87e38380939e075
+^C[I 04:15:31.006 NotebookApp] interrupted
+Serving notebooks from local directory: /home/Sajana/CS229-Tumor-Segmentation
+0 active kernels
+The Jupyter Notebook is running at:
+http://localhost:7000/?token=cf18051b226baf94865f4ecb55b4fd10b87e38380939e075
+Shutdown this notebook server (y/[n])? y
+[C 04:15:32.029 NotebookApp] Shutdown confirmed
+[I 04:15:32.030 NotebookApp] Shutting down 0 kernels
+(base) Sajana@tumor-seg-cpu:~/CS229-Tumor-Segmentation$ exit
+logout
+Connection to 104.196.254.63 closed.
+prellis_host:gcloud Sajana$ 

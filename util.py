@@ -14,24 +14,41 @@ def read_text(fname, headers, sep=' '):
     return header_to_data
 
 
+#TODO: Add the B/M data.
+# Add NORMS
 # reads text and stores data in header to list mapping
 def read_X_Y(fname, headers, sep=' '):
     header_to_data = defaultdict(list)
     Y = []
     X = []
     Y_names = []
+
+    ben_mag_data = [] # B, M, -1 (for N/A)
     with open(fname) as f:
         for line in f:
             line = line.strip()
             cols = line.split(sep)
-            if len(cols) == 7:
+
+            x_name = 'all-mias/' + cols[0] + '.pgm'
+            # if x_name in X:
+            	#remove x_name from X
+            if len(cols) == 7 and not cols[2] == 'NORM':
                 X.append('all-mias/' + cols[0] + '.pgm')
                 Yi = np.array( [float(cols[4]),
                              float(cols[5]),
                             float(cols[6])] ).reshape((3,1))
                 Y_names.append(cols[0])
                 Y.append(Yi)
-    return  X,np.array(Y), Y_names
+                ben_mag_data.append(cols[1])
+            #need to deal with the NORMS:
+            if len(cols) == 3 and cols[2] == 'NORM':
+                X.append('all-mias/' + cols[0] + '.pgm')
+                Yi = np.array( [0.0,0.0,0.0] ).reshape((3,1))
+                Y_names.append(cols[0])
+                Y.append(Yi)
+                ben_mag_data.append('-1')
+
+    return  X,np.array(Y), Y_names, ben_mag_data
 
 
 
