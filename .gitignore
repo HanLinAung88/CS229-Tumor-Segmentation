@@ -2,3 +2,4 @@ all-mias/*
 __pycache__/*
 mias_y_masked/*
 .ipynb_checkpoints/*
+logs/
