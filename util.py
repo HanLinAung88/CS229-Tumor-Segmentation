@@ -97,9 +97,9 @@ def resize_image(im, x_size=1024, y_size=1024):
 
 # extracts the patient id
 def extract_patient_id(name):
-    patient_id = re.search('_P_(.*?)_(.*?)_(.*?)(?:_|\/)', name)
+    patient_id = re.search('\/(.*?)_P_(.*?)_(.*?)_(.*?)(?:_|\/)', name)
     if patient_id.group() != None:
-        patient_id_group = patient_id.group(1) + patient_id.group(2) + patient_id.group(3)
+        patient_id_group = patient_id.group(1) + patient_id.group(2) + patient_id.group(3) + patient_id.group(4)
         return patient_id_group
     return None
 
