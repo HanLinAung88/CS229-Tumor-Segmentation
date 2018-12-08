@@ -118,16 +118,17 @@ def read_dicomIm_dir(directory, resize=True, x_size=1024, y_size=1024):
                 if patient_id is not None:
                     #ROI: Region of image
                     if 'ROI' in subdir:
-                        #if patient_id is already there, then concat image with multiple masks
                         #file size of actual mask image is bigger than zoomed in image
                         if os.stat(os.path.join(subdir, curr_file)).st_size >= MAX_ZOOMEDIN_FILESZ:
+                            #if patient_id is already there, then concat image with multiple masks
+                            dicom_im_bin = convert_im_to_binary(dicom_im)
                             if patient_id in mask_im_map:
                                 for row in range(mask_im_map[patient_id].shape[0]):
                                     for col in range(mask_im_map[patient_id].shape[1]):
-                                        if dicom_im[row][col] == 255:
-                                            mask_im_map[patient_id][row][col] = 255
+                                        if dicom_im_bin[row][col] == 1:
+                                            mask_im_map[patient_id][row][col] = 1
                             else:
-                                mask_im_map[patient_id] = dicom_im
+                                mask_im_map[patient_id] = dicom_im_bin
                     else:
                         orig_im_map[patient_id] = dicom_im
     return orig_im_map, mask_im_map
@@ -151,8 +152,6 @@ def read_dicomIm(filename):
 #Y: num_images * input_width * input_height (mask)
 def extract_logReg_data(X, Y):
     #converts Y to 1 and 0, 1 for tumor and 0 for non-tumor
-    Y[Y == 255] = 1
-    Y[Y != 1] = 0
     flattend_size = X.shape[0] * X.shape[1] * X.shape[2]
     return X.reshape(flattend_size, 1), Y.flatten()
 
