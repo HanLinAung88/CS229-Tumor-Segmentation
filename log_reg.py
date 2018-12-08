@@ -11,25 +11,6 @@ from sklearn import metrics
 if __name__ == "__main__":
     #extracts data
     X, Y = util.extract_data_CBIS_MIAS(isCBIS=True, isMias=False)
-    print(X.shape)
-    print(Y.shape)
-
-    print(X[0].shape)
-    print(Y[0].shape)
-
-    print(X[1].shape)
-    print(Y[1].shape)
-    plt.imshow(X[0])
-    plt.show()
-
-    plt.imshow(Y[0])
-    plt.show()
-
-    plt.imshow(X[1])
-    plt.show()
-
-    plt.imshow(Y[1])
-    plt.show()
     X_reg, Y_reg = util.extract_logReg_data(X, Y)
     X_train, X_test, Y_train, Y_test = train_test_split(X_reg, Y_reg,train_size=0.6,random_state=42)
 
