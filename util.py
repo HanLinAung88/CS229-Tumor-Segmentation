@@ -99,11 +99,18 @@ def read_dicomIm_dir(directory, resize=True, x_size=1024, y_size=1024):
                 if resize:
                     dicom_im = resize_image(dicom_im, x_size, y_size)
                 if patient_id is not None:
-                    #_1 is mask folder 000000.dcm is zoomed in image of tumor
-                    if re.search('_[0-9]+\/', subdir) is not None:
-                        #TODO: if patient_id is already there, then concat image with multiple masks
+                    #ROI: Region of image
+                    if 'ROI' in subdir:
+                        #if patient_id is already there, then concat image with multiple masks
+                        #file size of actual mask image is bigger than zoomed in image
                         if os.stat(os.path.join(subdir, curr_file)).st_size >= MAX_ZOOMEDIN_FILESZ:
-                            mask_im_map[patient_id] = dicom_im
+                            if patient_id in mask_im_map:
+                                for row in range(mask_im_map[patient_id].shape[0]):
+                                    for col in range(mask_im_map[patient_id].shape[1]):
+                                        if dicom_im[row][col] == 255:
+                                            mask_im_map[patient_id][row][col] = 255
+                            else:
+                                mask_im_map[patient_id] = dicom_im
                     else:
                         orig_im_map[patient_id] = dicom_im
     return orig_im_map, mask_im_map
@@ -140,6 +147,7 @@ def produce_y_mask(Y,Y_names):
         name = 'mias_y_masked/' + Y_names[i] + '.png'
         cv2.imwrite(name, image)
 
+#extracts data
 def extract_data_CBIS_MIAS(isCBIS=True, isMias=True):
     X = None
     Y = None
@@ -160,3 +168,10 @@ def extract_data_CBIS_MIAS(isCBIS=True, isMias=True):
             X = X_mias
             Y = Y_mias
     return X, Y
+
+#converts image in-place (0 to for non-tumor, 1 for tumor) to binary format
+#assumes values are either 255 or 0 for it to work properly
+def convert_im_to_binary(Y):
+    Y[Y == 255] = 1
+    Y[Y != 1] = 0
+    return Y
