@@ -20,4 +20,4 @@ open('all-mias.tar.gz','wb').write(r.content)
 
 # tensorboard --logdir=logs --port=8008
 
-https://piazza.com/class/jme0l06lytg2pz?cid=436
+#https://piazza.com/class/jme0l06lytg2pz?cid=436
